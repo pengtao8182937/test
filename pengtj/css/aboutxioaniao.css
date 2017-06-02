@@ -1,0 +1,554 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: STKaiti, KaiTi_GB2312, "华文楷体", "宋体", Arial, Helvetica, sans-serif;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.wrap{
+    width: 1100px;
+    max-width: 1500px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+/*开始的动画*/
+.animation{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #299ad6;
+    z-index: 9999;
+    cursor: pointer;
+}
+.animation .img{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    bottom: 30%;
+    left: 33%;
+}
+.items .img{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    bottom: 35%;
+    left: 33%;
+}
+.hear-font{
+    width: 450px;
+    height: 280px;
+    position: absolute;
+    left: 30%;
+    bottom:0 ;
+    text-align: center;
+    color: #fff;
+    display: none;
+}
+.hear-font h1{
+    font-size: 44px;
+    font-weight: normal;
+}
+.hear-font .note{
+    font-size: 16px;
+}
+.hear-font .background{
+    font-size: 48px;
+    height: 74px;
+    position: relative;
+}
+.back1, .back2{
+    position: absolute;
+    width: 29px;
+    height: 29px;
+}
+.back1{
+    background: url("../images/animation/top_dot.png") no-repeat 1px 1px ;
+    top: -10px;
+    left: -11px;
+}
+.back2{
+    background: url("../images/animation/bottom_dot.png") no-repeat;
+    bottom: 0;
+    right: -21px;
+}
+
+.hear-font .ad{
+    font-size: 16px;
+    line-height: 27px;
+    margin-top:5px ;
+}
+
+/*导航*/
+.nav{
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url("../images/animation/nav_background.jpg") no-repeat;
+    z-index: 99;
+}
+li{
+    float: left;
+}
+.nav .logo{
+    margin-left: 37px;
+    width: 133px;
+    height: 50px;
+    float: left;
+    background: url("../images/animation/logo.png") no-repeat 0 5px;
+    margin-right: 54px;
+    cursor: pointer;
+}
+.nav li{
+    margin-right: 38px;
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fefefe;
+}
+.nav li span:hover{
+    opacity: .8;
+    cursor: pointer;
+}
+.nav i{
+    position: absolute;
+    top: 40px;
+    left: 39px;
+    width: 5px;
+    height: 5px;
+    background: url("../images/animation/dot.jpg") no-repeat;
+    display: none;
+}
+/*主体部分*/
+/*一1）*/
+.main-wrap{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.main{
+    width: 100%;
+    height: 300%;
+    position: absolute;
+    top: -100%;
+    left: 0;
+}
+.main>.items{
+    width: 100%;
+    height: 33.333333%;
+    overflow: hidden;
+    position: relative;
+}
+.items .hear-font{
+    display: block;
+}
+.cont_1{
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.cont-item1{
+    width: 100%;
+    height: 50%;
+    background: #221236;
+    position: relative;
+}
+.cont-item2{
+    width: 100%;
+    height: 50%;
+    position: relative;
+    background: #ffffff;
+}
+.cont_1 .cont-item1 .btn{
+    width: 58px;
+    height: 58px;
+    cursor: pointer;
+    margin: 30px auto;
+    position: relative;
+    overflow: hidden;
+}
+.btn>div{
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    top: -100%;
+    left: 0;
+}
+.cont_1 .cont-item1 .btn .btn1{
+    width: 100%;
+    height: 50%;
+    background: url("../images/animation/btn.png") no-repeat;
+}
+.cont_1 .cont-item1 .btn .btn2{
+    width: 100%;
+    height: 50%;
+    background: url("../images/animation/btn.png") no-repeat 0 -58px;
+}
+/*一2）*/
+/*.cont-item2*/
+.cont-item2 .banner{
+    padding-top: 50px;
+    width: 300%;
+    height: 100%;
+    position: relative;
+}
+.cont-item2 .box{
+    float: left;
+    width: 33.333333%;
+    height: 100%;
+}
+.cont-item2 .box h1{
+    color: #311759;
+    font-size: 54px;
+    width: 125px;
+    margin:  0 auto;
+    border-top:  20px  solid transparent;
+}
+.cont-item2 .box .title{
+    color: #6b6a6f;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    width: 100%;
+
+}
+.cont-item2 .box .imgI{
+    width: 900px;
+    height: 380px;
+    margin: 0 auto;
+}
+.cont-item2 .box .imgI>div{
+    float: left;
+    width: 190px;
+    height: 380px;
+    margin-left: 30px;
+}
+.btn-left, .btn-right{
+    width: 58px;
+    height: 58px;
+    position: absolute;
+    top:45% ;
+    cursor: pointer;
+    overflow: hidden;
+}
+.btn-left{
+    left: 5%;
+}
+.btn-right{
+    right: 5%;
+}
+.btn-right>div, .btn-left>div{
+    width: 200%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../images/animation/goleft.png") no-repeat;
+}
+.btn-right>div{
+    left: -100%;
+    background: url("../images/animation/goright.png") no-repeat;
+}
+.img2{
+    width: 550px;
+    margin: 0 auto;
+    height: 50px;
+    border: 10px solid transparent;
+    background: url("../images/animation/bird_title.png") no-repeat;
+}
+.cont-item-cont{
+    width: 100%;
+    height: 100px;
+    margin-bottom: 70px;
+}
+.cont-item-cont .cont-img{
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-left: 250px;
+}
+.cont-item-cont .cont-font{
+    float: left;
+    margin-left: 55px;
+    font-size: 18px;
+    color: #6b6a6f;
+}
+.cont-item-cont .cont-font h1{
+    color: #6b6a6f;
+    font-size: 24px;
+    width: 100%;
+    margin: 20px 0 0 0 ;
+    border: none 0;
+}
+.zuo{
+    height: 16px;
+    width: 100%;
+    background: url("../images/animation/yinhao3_zuo.png") no-repeat 350px 0;
+    margin-top: 70px;
+}
+.you{
+    height: 16px;
+    width: 100%;
+    background: url("../images/animation/yinhao3_you.png") no-repeat 732px 0;
+    margin-bottom: 30px;
+}
+
+.h1{
+    width: 100%;
+    height: 36px;
+    color: #221236;
+    font-size: 36px;
+    text-align: center;
+}
+.font_1{
+    padding-left: 220px;
+    line-height: 30px;
+    color: #6b6a6f;
+    font-size: 18px;
+}
+.font_1 span{
+    float: left;
+    width: 35px;
+    height: 18px;
+}
+.img_1{
+    width: 170px;
+    margin: 20px auto;
+}
+/*一3）*/
+.cont_2{
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #221236;
+    color: #fff;
+    padding-top: 50px;
+}
+.cont_2 .title{
+    width: 100%;
+    font-size: 48px;
+    text-align: center;
+    height: 90px;
+    line-height: 90px;
+}
+.cont_2 .cont2{
+    width: 970px;
+    height: 380px;
+    margin: 50px auto;
+}
+.jiazhi_left{
+    width: 18px;
+    height: 18px;
+    float: left;
+}
+.jiazhi_right{
+    width: 18px;
+    height: 18px;
+    float: right;
+}
+.jiazhi_top{
+    height: 18px;
+    width: 100%;
+    margin-bottom: 22px;
+}
+.jiazhi_bottom{
+    height: 18px;
+    width: 100%;
+}
+.jiazhi_top .jiazhi_left{
+    background: url("../images/animation/jiazhi_border_11.png") no-repeat;
+}
+.jiazhi_top .jiazhi_right{
+    background: url("../images/animation/jiazhi_border_21.png") no-repeat;
+}
+.jiazhi_bottom .jiazhi_right{
+    background: url("../images/animation/jiazhi_border_41.png") no-repeat;
+}
+.jiazhi_bottom .jiazhi_left{
+    background: url("../images/animation/jiazhi_border_31.png") no-repeat;
+}
+.jiazhi_cont{
+    width: 820px;
+    height: 320px;
+    margin: 0 auto;
+}
+.jiazhi_main{
+    width: 360px;
+    height: 70px;
+    float: left;
+    margin-bottom: 36px;
+    margin-left: 50px;
+}
+.jiazhi_main .jiazhi_img{
+    width: 75px;
+    height: 75px;
+    float: left;
+    background: url("../images/animation/tuoyuan.png") no-repeat;
+    line-height: 75px;
+    text-align: center;
+}
+.jiazhi_main .font{
+    margin: 13px 0 0 27px;
+    float: left;
+    line-height: 26px;
+    color: #ffffff;
+    font-size: 16px;
+}
+/*一4）*/
+.cont_3{
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+}
+.cont_3 h1{
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 48px;
+    color: #221236;
+}
+.zhangyunwrap{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 440px;
+}
+.cont_3 .zhangyun_cont{
+    width: 200%;
+    height: 440px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.cont_3 .cont1, .cont_3 .cont2{
+    width: 50%;
+    overflow: hidden;
+    float: left;
+}
+.cont_3 .cont2 p, .cont_3 .cont1 p{
+    height: 46px;
+    line-height: 46px;
+    color: #717074;
+    font-size: 15px;
+    width: 910px;
+    margin: 0 auto;
+    border-bottom: 1px dotted #a4a4a8;
+}
+.cont_3 .cont2 span, .cont_3 .cont1 span{
+    width: 48px;
+    height: 100%;
+    float: left;
+}
+.cont_3 .cont1 p{
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+}
+.cont_3 .zhangyun_dots{
+    width: 180px;
+    height: 8px;
+    margin: 0 auto;
+}
+.cont_3 .zhangyun_dots .left, .cont_3 .zhangyun_dots .right{
+    width: 78px;
+    height: 100%;
+    float: left;
+    cursor: pointer;
+    position: relative;
+    background: url("../images/animation/xiaoniaoyun_btn.png") no-repeat 0 -8px;
+}
+.cont_3 .zhangyun_dots .right{
+    margin-left: 24px;
+    background: url("../images/animation/xiaoniaoyun_btn.png") no-repeat 0 -8px;
+}
+.cont_3 .zhangyun_dots .left div, .cont_3 .zhangyun_dots .right div{
+    width: 100%;
+    height: 100%;
+    background: url("../images/animation/xiaoniaoyun_btn.png") no-repeat 0 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.cont_3 .zhangyun_dots .right div{
+    right: auto;
+    left: 0;
+}
+/*一5）*/
+.cont_4{
+    width: 100%;
+    height: 850px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+    background: #221236;
+}
+.black{
+    width: 100%;
+    height: 100%;
+    background: url("../images/animation/blackground.png") no-repeat 0 -236px;
+}
+.app{
+    width: 640px;
+    overflow: hidden;
+    margin-left: 70px;
+    font-size: 48px;
+    color: #fff;
+    line-height: 28px;
+    border-top:40px solid transparent ;
+    position: relative;
+}
+.app img{
+    margin-right: 60px;
+    float: left;
+}
+.app span{
+    float: left;
+    height: 280px;
+    line-height: 280px;
+}
+.app .font{
+    position: absolute;
+    top: 0;
+    left: 60px;
+    font-size: 18px;
+}
+.kehu{
+    width: 460px;
+    height: 250px;
+    margin-left: 38%;
+    border-top: 20px solid transparent;
+    background: url("../images/animation/contacts_line.png") no-repeat 0 40px;
+}
+.kehu h1{
+    width: 100%;
+    height: 40px;
+    color: #191919;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.kehu .kuhu-font{
+    line-height: 40px;
+    color: #191919;
+    font-size: 18px;
+}
