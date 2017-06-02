@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图-平移</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            height: 650px;
+            background: linear-gradient(pink 0%,#fff 50%,chartreuse 100%   ) no-repeat;
+        }
+        .wrap{
+            overflow: hidden;
+            width: 500px;
+            margin: 20px auto;
+            position: relative;
+            border-radius: 10px;
+        }
+        .main{
+            overflow: hidden;
+            height: 400px;
+            width: 500px;
+        }
+        .main>div{
+            position: absolute;
+            top: 0;
+            left: -500px;
+            transition: all 1s linear;
+            width: 2500px;
+            height: 400px;
+        }
+        .main>div>div{
+            float: left;
+        }
+        .main img{
+            width: 500px;
+            height: 400px;
+        }
+        span{
+            position: absolute;
+            top: 190px;
+            left: 20px;
+            display: none;
+            background: linear-gradient(blue 0%, pink 100%)no-repeat;
+            width: 30px;
+            height: 50px;
+            border-radius: 5px;
+            font-size: 20px;
+            color: #fff;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .wrap:hover span{
+            display: block;
+        }
+        .bt-right{
+            left: auto;
+            right: 20px;
+        }
+        ul{
+            position: absolute;
+            bottom: 37px;
+            left: 187px;
+        }
+        li{
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
+            background: #fff;
+            list-style: none;
+            float: left;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .active{
+            background: linear-gradient(#fff 0%, red 100%)no-repeat;
+            box-shadow: 0 0 0 2px gray;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap" >
+    <div class="main">
+        <div class="banner">
+            <div><img src="timg3.gif" alt=""/></div>
+            <div><img src="timg0.gif" alt=""/></div>
+            <div><img src="timg1.gif" alt=""/></div>
+            <div><img src="timg2.gif" alt=""/></div>
+            <div><img src="timg3.gif" alt=""/></div>
+            <div><img src="timg0.gif" alt=""/></div>
+        </div>
+    </div>
+    <span class="bt-left" style="z-index: 3">&lt;</span>
+    <span class="bt-right" style="z-index: 3">&gt;</span>
+    <ul style="z-index: 3">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script>
+    //获取的dom
+    var banner = document.getElementsByClassName( "banner" )[0];
+    var spanBtn = document.getElementsByTagName( "span" );
+    var liBtn = document.getElementsByTagName( "li" );
+    var main = document.getElementsByClassName( "main" )[0];
+    var wrap = document.getElementsByClassName( "wrap" )[0];
+
+
+
+    var x=true;
+    //轮播部分
+    function noneBanner(){
+
+        timer = setInterval( function(){
+            iNew++;
+            iNew = iNew < 4 ? iNew : 0 ;
+            setTimeout( function(){
+                if( iNew < 3 ){
+                    banner.style.transition = "all 1s linear";
+                    banner.style.left = -500*iNew-500+"px";
+                }else{
+                    banner.style.left = -500*iNew-500+"px";
+                    setTimeout( function(){
+                        banner.style.transition = "none";
+                        banner.style.left = "0";
+                    },1000 )
+                }
+                for( var i=0; i<liBtn.length; i++ ){
+                    liBtn[i].className = "";
+                }
+                liBtn[iNew].className = 'active';
+            },0 );
+
+        },2000 );
+
+    }
+    var timer = null,iNew = 0;
+    noneBanner();
+
+    //进入停止banner
+    wrap.onmouseover = function(){
+        clearInterval( timer )
+    };
+
+    //离开重启banner
+    wrap.onmouseout = function(){
+        noneBanner();
+    };
+
+    //左右切换
+    spanBtn[0].onclick = function(){
+        if(x==false){
+            return
+        }
+        iNew--;
+        iNew = iNew > -1 ? iNew : 3 ;
+        if( iNew == 3 ){
+            banner.style.transition = "all 1s linear";
+            banner.style.left = 0+"px";
+            setTimeout( function(){
+                banner.style.transition = "none";
+                banner.style.left = "-2000px";
+            },1000 )
+        }else if( iNew == 2 ){
+            banner.style.transition = "none";
+            banner.style.left = -2000+"px";
+            setTimeout( function(){
+                banner.style.transition = "all 1s linear";
+                banner.style.left = "-1500px";
+            },0 )
+        }else{
+            banner.style.transition = "all 1s linear";
+            banner.style.left = -500*iNew-500+"px";
+        }
+        for( var i=0; i<liBtn.length; i++ ){
+            liBtn[i].className = "";
+        }
+        liBtn[iNew].className = 'active';
+        if( iNew == 3 ){
+            setTimeout( function(){
+                banner.style.transition = "none";
+                banner.style.left = "0px";
+            },1000 );
+            banner.style.transition = "all 1s linear";
+        }
+        x=false;
+        setTimeout(function(){
+            x=true
+        },1000)
+    };
+
+    spanBtn[1].onclick = function(){
+        if(x==false){
+            return
+        }
+        iNew++;
+        iNew = iNew < 4 ? iNew : 0 ;
+        if( iNew == 0 ){
+            banner.style.transition = "none";
+            banner.style.left = "0px";
+            setTimeout( function(){
+                banner.style.transition = "all 1s linear";
+                banner.style.left = -500*iNew-500+"px";
+            },0 )
+        }else{
+            banner.style.transition = "all 1s linear";
+            banner.style.left = -500*iNew-500+"px";
+        }
+        for( var i=0; i<liBtn.length; i++ ){
+            liBtn[i].className = "";
+        }
+        liBtn[iNew].className = 'active';
+        if( iNew == 3 ){
+            setTimeout( function(){
+                banner.style.transition = "none";
+                banner.style.left = "0px";
+            },1000 );
+            banner.style.transition = "all 1s linear";
+        }
+        x=false;
+        setTimeout(function(){
+            x=true
+        },1000)
+    };
+
+    //下标当前项
+    for( var i=0; i<liBtn.length; i++ ){
+        liBtn[i].index = i;
+        liBtn[i].onmouseover = function(){
+            iNew = this.index;
+            banner.style.transition = "all 1s linear";
+            banner.style.left = -500*iNew-500+"px";
+            for( var i=0; i<liBtn.length; i++ ){
+                liBtn[i].className = "";
+            }
+            liBtn[iNew].className = 'active';
+            liBtn[iNew].style.opacity = ".6";
+            setTimeout( function(){
+                liBtn[iNew].style.opacity = "1";
+            },500 )
+        }
+    }
+</script>
+</body>
+</html>

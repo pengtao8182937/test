@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图-three-box</title>
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+            user-select: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .wrap {
+            width: 500px;
+            height: 400px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .banner {
+            width: 1500px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: -500px;
+            overflow: hidden;
+        }
+
+        .box {
+            width: 500px;
+            height: 400px;
+            float: left;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+        }
+
+        .left, .right {
+            position: absolute;
+            width: 30px;
+            height: 50px;
+            background: linear-gradient(pink 0%, #fff 100%) no-repeat;
+            top: 165px;
+            left: 5px;
+            cursor: pointer;
+            line-height: 50px;
+            text-align: center;
+            font-size: 30px;
+            color: pink;
+            user-select: none;
+            display: none;
+            z-index: 5;
+            border-radius: 5px;
+        }
+
+        .right {
+            left: auto;
+            right: 5px;
+        }
+
+        ul {
+            position: relative;
+            bottom: -345px;
+            left: 157px;
+        }
+
+        li {
+            width: 25px;
+            height: 25px;
+            border-radius: 50px;
+            background: #fff;
+            float: left;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .transition {
+            transition: all .5s linear;
+        }
+
+        .active {
+            background: linear-gradient(red 0%, #fff) no-repeat;
+        }
+
+        .top, .bottom{
+            width: 500px;
+            height: 400px;
+            position: absolute;
+            top: -400px;
+            left: 0;
+        }
+        .bottom{
+            top: 400px;
+        }
+        .top img, .bottom img{
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="wrap">
+    <div class="banner">
+        <div class="box"></div>
+        <div class="box">
+            <img src='banner0.jpg'/>
+        </div>
+        <div class="box"></div>
+    </div>
+    <button class="left">&lt;</button>
+    <button class="right">&gt;</button>
+    <div class="top"></div>
+    <div class="bottom"></div>
+    <ul>
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<script>
+    //获取的dom
+    var divTop = document.getElementsByClassName("top")[0];
+    var divBottom = document.getElementsByClassName("bottom")[0];
+    var banner = document.getElementsByClassName("banner")[0];
+    var left = document.getElementsByClassName("left")[0];
+    var right = document.getElementsByClassName("right")[0];
+    var actLi = document.getElementsByTagName("li");
+    var wrap = document.getElementsByClassName("wrap")[0];
+    var box = document.getElementsByClassName("box");
+    var iNew_0 = 0, iNew_1 = 0, iNew_2 = 0, x = true;
+
+    //下标点击效果
+    for (var i = 0; i < actLi.length; i++) {
+        actLi[i].index = i;
+        actLi[i].onclick = function () {
+            if (x == false) {
+                return
+            }
+            if( iNew_1 > this.index ){
+                for (var n = 0; n < actLi.length; n++) {
+                    actLi[n].className = "";
+                    actLi[n].style.transition = "all .2s linear"
+                }
+                actLi[this.index].className = "active";
+                box[1].style.transition = "all .5s linear";
+                divTop.style.transition = "all .5s linear";
+                box[1].style.transform = "translateY(400px)";
+                divTop.style.top = "0";
+                box[1].innerHTML = "<img src='banner" + iNew_1 + ".jpg'/>";
+                iNew_1 = this.index;
+                divTop.innerHTML = "<img src='banner" + iNew_1 + ".jpg'/>";
+                setTimeout(function(){
+                    box[1].style.transition = "";
+                    divTop.style.transition = "";
+                    divTop.style.top = "-400px";
+                    box[1].style.transform = "translateY(0)";
+                    box[1].innerHTML = "<img src='banner" + iNew_1 + ".jpg'/>";
+                },500);
+            }else if(iNew_1 == this.index){
+                return
+            }else{
+                for (var n = 0; n < actLi.length; n++) {
+                    actLi[n].className = "";
+                    actLi[n].style.transition = "all .2s linear"
+                }
+                actLi[this.index].className = "active";
+                box[1].style.transition = "all .5s linear";
+                divBottom.style.transition = "all .5s linear";
+                box[1].style.transform = "translateY(-400px)";
+                divBottom.style.top = "0";
+                box[1].innerHTML = "<img src='banner" + iNew_1 + ".jpg'/>";
+                iNew_1 = this.index;
+                divBottom.innerHTML = "<img src='banner" + iNew_1 + ".jpg'/>";
+                setTimeout(function(){
+                    box[1].style.transition = "";
+                    divBottom.style.transition = "";
+                    divBottom.style.top = "400px";
+                    box[1].style.transform = "translateY(0)";
+                    box[1].innerHTML = "<img src='banner" + iNew_1 + ".jpg'/>";
+                },500);
+            }
+
+            x = false;
+            setTimeout(function () {
+                x = true
+            }, 500)
+        }
+    }
+
+    //左右点击效果
+    left.onclick = function () {
+        if (x == false) {
+            return
+        }
+        iNew_1--;
+        iNew_1 = iNew_1 == -1 ? 5 : iNew_1;
+        iNew_2 = iNew_1 + 1;
+        iNew_2 = iNew_2 == 6 ? 0 : iNew_2;
+        onc1();
+        box[1].innerHTML = "<img src='banner" + iNew_2 + ".jpg'/>";
+        box[2].innerHTML = "<img src='banner" + iNew_1 + ".jpg'/>";
+        banner.className = "banner transition";
+        banner.style.left = "-1000px";
+        onc2();
+        x = false;
+        setTimeout(function () {
+            x = true
+        }, 500)
+    };
+    right.onclick = function () {
+        if (x == false) {
+            return
+        }
+        iNew_1++;
+        iNew_1 = iNew_1 == 6 ? 0 : iNew_1;
+        iNew_0 = iNew_1 - 1;
+        iNew_0 = iNew_0 == -1 ? 5 : iNew_0;
+        onc1();
+        box[1].innerHTML = "<img src='banner" + iNew_0 + ".jpg'/>";
+        box[0].innerHTML = "<img src='banner" + iNew_1 + ".jpg'/>";
+        banner.className = "banner transition";
+        banner.style.left = "0";
+        onc2();
+        x = false;
+        setTimeout(function () {
+            x = true
+        }, 500)
+    };
+
+    //左右点击的重复函数
+    function onc1() {
+        //下标当前项
+        for (var i = 0; i < actLi.length; i++) {
+            actLi[i].className = "";
+        }
+        actLi[iNew_1].className = "active";
+    }
+    function onc2() {
+        setTimeout(function () {
+            box[1].innerHTML = "<img src='banner" + iNew_1 + ".jpg'/>";
+            banner.className = "banner";
+            banner.style.left = "-500px";
+        }, 500)
+    }
+    //自动播放
+    var timer = null;
+    ak47();
+    function ak47() {
+        timer = setInterval(function () {
+            right.onclick();
+        }, 2000);
+    }
+    //点击按钮的隐藏显示以及banner的开关控制
+    wrap.onmouseover = function () {
+        left.style.display = "block";
+        right.style.display = "block";
+        clearTimeout(timer)
+    };
+    wrap.onmouseout = function () {
+        left.style.display = "none";
+        right.style.display = "none";
+        ak47();
+    };
+
+
+</script>
+
+
+</body>
+</html>

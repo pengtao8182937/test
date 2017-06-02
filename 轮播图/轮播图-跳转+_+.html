@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图-跳转</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: linear-gradient(pink 0%,#fff 100%  ) no-repeat;
+        }
+        .wrap{
+            overflow: hidden;
+            width: 500px;
+            margin: 20px auto;
+            position: relative;
+        }
+        .main{
+            width: 100%;
+            height: 400px;
+        }
+        .main>div{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .main img{
+            width: 500px;
+            height: 400px;
+        }
+        span{
+            position: absolute;
+            top: 190px;
+            left: 20px;
+            display: none;
+            background: linear-gradient(blue 0%, pink 100%)no-repeat;
+            width: 30px;
+            height: 50px;
+            border-radius: 5px;
+            font-size: 20px;
+            color: #fff;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .wrap:hover span{
+            display: block;
+        }
+        .bt-right{
+            left: auto;
+            right: 20px;
+        }
+        ul{
+            position: absolute;
+            bottom: 37px;
+            left: 187px;
+            overflow: hidden;
+        }
+        li{
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
+            background: #fff;
+            list-style: none;
+            float: left;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .active{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="main">
+        <div><img src="timg0.gif" alt=""/></div>
+        <div style="display: none"><img src="timg1.gif" alt=""/></div>
+        <div style="display: none"><img src="timg2.gif" alt=""/></div>
+        <div style="display: none"><img src="timg3.gif" alt=""/></div>
+    </div>
+    <span class="bt-left">&lt;</span>
+    <span class="bt-right">&gt;</span>
+    <ul>
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script>
+    //获取的dom
+    var divImg = document.getElementsByClassName( "main" )[0].getElementsByTagName( "div" );
+    var buttom = document.getElementsByTagName( "span" );
+    var li = document.getElementsByTagName( "li" );
+    var wrap = document.getElementsByClassName( "wrap" )[0];
+
+    //轮播部分
+    var timer = null,iNew = 0;
+
+    banner();
+
+    //独立作用域
+    function banner(){
+        outMove();
+
+        //左右点击切换
+        for( var i=0; i<2; i++ ){
+            buttom[i].index = i;
+            buttom[i].onclick = function(){
+                iNew = this.index == 0 ? iNew-1 >= 0 ? iNew-1 : 3 : iNew+1 < 4 ? iNew+1 : 0;
+                buttom[this.index].style.background = "black";
+                var ak47 = this.index;
+                setTimeout( function(){
+                    noneBanner();
+                    buttom[ak47].style.background = "linear-gradient(blue 0%, pink 100%) no-repeat";
+                },200 )
+            }
+        }
+
+        //下标当前项
+        for( var i=0; i<li.length; i++ ){
+            li[i].index = i;
+            li[i].onclick = function(){
+                iNew = this.index;
+                noneBanner()
+            }
+        }
+
+        //鼠标进入轮播停止
+        wrap.onmouseover = function(){
+            clearInterval( timer );
+        };
+
+        //鼠标离开轮播恢复
+        wrap.onmouseout = function(){
+            outMove();
+        }
+    }
+
+    //清空banner状态
+    function noneBanner(){
+        for( var n=0 ;n<divImg.length; n++ ){
+            divImg[n].style.display = "none";
+            li[n].className = "";
+        }
+        divImg[iNew].style.display = "block";
+        li[iNew].className = "active";
+    }
+    function outMove(){
+        timer = setInterval( function(){
+            iNew++;
+            iNew = iNew < 4 ? iNew : 0;
+            noneBanner()
+        },1000 );
+    }
+</script>
+</body>
+</html>
