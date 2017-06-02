@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日历</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            width: 500px;
+            margin: 20px auto;
+            border: 1px solid pink;
+            padding: 20px;
+        }
+
+        .current {
+            width: 100%;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .main {
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .content .title {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .content .title span {
+            cursor: pointer;
+        }
+
+        .content .title span:hover {
+            color: dodgerblue;
+        }
+
+        .span-right0 {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .span-right1 {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .content .title a {
+            text-align: center;
+            display: block;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .content .title a:hover {
+            color: dodgerblue;
+        }
+
+        .cont-title {
+            width: 100%;
+        }
+
+        .date-cont {
+            float: left;
+            width: 14%;
+            overflow: hidden;
+        }
+
+        .date-cont_ {
+            text-align: center;
+            line-height: 50px;
+            height: 50px;
+            font-weight: bold;
+            font-size: 23px;
+            color: red;
+        }
+
+        .date-cont_ span {
+            color: gray;
+            cursor: pointer;
+            float: left;
+            width: 98%;
+            height: 30px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 30px;
+            border: 1px solid transparent;
+        }
+
+        .cont_-span:hover {
+            background: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="current"></div>
+    <div class="main">
+        <div class="content" style="z-index: 3"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+    </div>
+</div>
+
+<script>
+    //获取的dom
+    var current = document.getElementsByClassName("current")[0];
+    var content = document.getElementsByClassName("content");
+
+    //日历标题
+    for (var i = 0; i < content.length; i++) {
+        content[i].innerHTML = "<div class='title'><span class='span-right0'>◀</span><a></a><span class='span-right1'>▶</span></div><div class='cont-title'></div>"
+    }
+
+    //日历-天板块  +
+    foundDomDate();
+    function foundDomDate() {
+        var foundDiv_ = "";
+        for (var i = 0; i < 7; i++) {
+            foundDiv_ += "<div class='date-cont_'></div>"
+        }
+        var foundDiv = "";
+        for (var i = 0; i < 7; i++) {
+            foundDiv += "<div class='date-cont'>" + foundDiv_ + "</div>"
+        }
+        content[0].getElementsByClassName("cont-title")[0].innerHTML = foundDiv;
+    }
+
+    //当前时间
+    setInterval(function () {
+        var currentDate = new Date();
+        current.innerHTML = currentDate.toLocaleDateString().split("/").join(" - ") + " +_+ " + currentDate.getHours() + "：" + currentDate.getMonth() + "：" + currentDate.getSeconds();
+
+    }, 1000);
+    var currentDate = new Date();
+    var spanRight0 = document.getElementsByClassName("span-right0")[0];
+    var spanRight1 = document.getElementsByClassName("span-right1")[0];
+
+
+    var nn = currentDate.getFullYear();
+    var yy = currentDate.getMonth() + 1;
+    var rr = currentDate.getDate();
+
+    //左点击事件
+    spanRight0.onclick = function () {
+
+        if (yy != 1) {
+            yy = yy - 1
+        } else {
+            yy = 12;
+            nn = nn - 1
+        }
+
+        dateTt(nn, yy);
+        dateTtTab();
+        dateTtActive()
+
+    };
+
+    //右点击事件
+    spanRight1.onclick = function () {
+
+        if (yy != 12) {
+            yy = yy + 1
+        } else {
+            yy = 1;
+            nn = nn + 1
+        }
+
+        dateTt(nn, yy);
+        dateTtTab();
+        dateTtActive()
+
+    };
+
+    dateTt(nn, yy);
+    dateTtTab();
+    dateTtActive();
+
+    //日历-天板块  -
+
+    //获取日历-日-函数  +
+    function dateTt(x, y) {
+        content[0].getElementsByTagName("a")[0].innerHTML = x + " 年 " + y + " 月 ";
+
+        //日历-天-便利二维数组
+        var dateDate2 = new Date(x, y - 1);
+        var dateDate1 = new Date(x, y - 2);
+        var dateDate3 = new Date(x, y);
+        var xx_ = dateDate2.getDay();
+        var tt1 = ( dateDate2.getTime() - dateDate1.getTime() ) / 1000 / 60 / 60 / 24;
+        var tt2 = ( dateDate3.getTime() - dateDate2.getTime() ) / 1000 / 60 / 60 / 24;
+
+        var dateArr = [];
+        for (var i = 0; i < 7; i++) {
+            var star_0 = i == 0 ? "日" : i == 1 ? "一" : i == 2 ? "二" : i == 3 ? "三" : i == 4 ? "四" : i == 5 ? "五" : "六";
+            dateArr[i] = [];
+            dateArr[i][0] = star_0;
+        }
+        var newDate;
+        if (xx_ != 0) {
+            newDate = tt1 - xx_
+        } else {
+            newDate = 0
+        }
+        var inewDate1 = 0, inewDate2 = 0;
+        for (var i = 1; i < 7; i++) {
+            for (var n = 0; n < 7; n++) {
+                inewDate1++;
+                inewDate2++;
+                newDate++;
+                if (inewDate1 == xx_ + 1) {
+                    newDate = 1;
+                }
+                if (inewDate2 == xx_ + tt2 + 1) {
+                    newDate = 1
+                }
+                dateArr[n][i] = "<span class='cont_-span_'>" + newDate + "</span>";
+            }
+        }
+
+        var dateCont = document.getElementsByClassName("date-cont");
+
+        //二维数组插入时间
+        var dateContNum1 = 0, dateContNum2 = 0;
+        for (var i = 0; i < 7; i++) {
+            for (var n = 0; n < 7; n++) {
+                dateCont[i].getElementsByClassName("date-cont_")[n].innerHTML = dateArr[i][n];
+                dateCont[i].getElementsByClassName("date-cont_")[n].style.border = "1px solid transparent";
+            }
+        }
+
+        for (var i = 1; i < 7; i++) {
+            for (var n = 0; n < 7; n++) {
+                dateContNum1++;
+                dateContNum2++;
+                if (dateContNum1 >= xx_ + 1 && dateContNum2 < xx_ + tt2 + 1) {
+                    dateCont[n].getElementsByClassName("date-cont_")[i].getElementsByTagName("span")[0].style.color = "black";
+                    dateCont[n].getElementsByClassName("date-cont_")[i].getElementsByTagName("span")[0].className = "cont_-span cont_-span_";
+
+                }
+
+            }
+        }
+    }
+
+    //获取日历-日-函数  -
+
+    //点击切换日历-日-函数  +
+
+    function dateTtTab() {
+
+        //获取日历-日-项的dom
+        var dateCont_Span = document.getElementsByClassName("cont_-span_");
+
+        //切换的点击事件
+        for (var i = 0; i < dateCont_Span.length; i++) {
+            dateCont_Span[i].index = i;
+            dateCont_Span[i].onclick = function () {
+                for (var n = 0; n < dateCont_Span.length; n++) {
+                    dateCont_Span[n].style.border = "";
+                }
+                var Y = this.index % 6;
+                if (Y == 0) {
+
+                    if (dateCont_Span[this.index].style.color != "black") {
+
+                        if (yy != 1) {
+                            yy = yy - 1
+                        } else {
+                            yy = 12;
+                            nn = nn - 1
+                        }
+
+                        var TtNum = dateCont_Span[this.index].innerHTML;
+
+                        dateTt(nn, yy);
+                        dateTtTab();
+
+
+                        for (var k = 0; k < dateCont_Span.length; k++) {
+                            if (dateCont_Span[k].style.color == "black") {
+                                if (dateCont_Span[k].innerHTML == TtNum) {
+                                    dateCont_Span[k].style.border = "1px dotted red";
+                                    dateTtActive()
+                                }
+                            }
+                        }
+
+                    } else {
+                        dateCont_Span[this.index].style.border = "1px dotted red";
+                    }
+
+                } else if (Y == 4 || Y == 5) {
+
+                    if (dateCont_Span[this.index].style.color != "black") {
+
+                        if (yy != 12) {
+                            yy = yy + 1
+                        } else {
+                            yy = 1;
+                            nn = nn + 1
+                        }
+
+                        var TtNum = dateCont_Span[this.index].innerHTML;
+
+                        dateTt(nn, yy);
+                        dateTtTab();
+
+
+                        for (var k = 0; k < dateCont_Span.length; k++) {
+                            if (dateCont_Span[k].style.color == "black") {
+                                if (dateCont_Span[k].innerHTML == TtNum) {
+                                    dateCont_Span[k].style.border = "1px dotted red";
+                                    dateTtActive()
+                                }
+                            }
+                        }
+
+                    } else {
+                        dateCont_Span[this.index].style.border = "1px dotted red";
+                    }
+
+                } else {
+                    dateCont_Span[this.index].style.border = "1px dotted red";
+                }
+            }
+        }
+    }
+
+    //点击切换日历-日-函数  -
+
+    //当日当前项  +
+
+    function dateTtActive() {
+        var nn_ = currentDate.getFullYear();
+        var yy_ = currentDate.getMonth() + 1;
+        var rr_ = currentDate.getDate();
+        var dateCont_Span = document.getElementsByClassName("cont_-span_");
+
+        if (nn == nn_ && yy == yy_ && rr == rr_) {
+            for (var k = 0; k < dateCont_Span.length; k++) {
+                if (dateCont_Span[k].style.color == "black") {
+                    if (dateCont_Span[k].innerHTML == rr_) {
+                        dateCont_Span[k].style.background = "gray";
+                    }
+                }
+            }
+        }
+    }
+
+    //当日当前项  -
+
+
+</script>
+
+</body>
+</html>
