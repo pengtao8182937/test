@@ -1,0 +1,13 @@
+.wrap{
+    background: #ff47d8;
+    color:red ;
+}
+ul{
+    background: #fff;
+}
+.main{
+    background: linear-gradient(#fff 0%, #ff47d8 100%);
+}
+.ak47{
+    background: linear-gradient(#ff47d8 0%, #fff 100%);
+}

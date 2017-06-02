@@ -1,0 +1,146 @@
+/*2017.5.15-pengtaojun*/
+*{
+    padding: 0;
+    margin: 0;
+    user-focus: none;
+    font-family: STKaiti, KaiTi_GB2312, "华文楷体", "宋体", Arial, Helvetica, sans-serif;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.all-wrap, .all-min-wrap{
+    max-width: 1500px;
+    /*overflow: hidden;*/
+    margin: 0 auto;
+}
+.wrap{
+    width: 1100px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: "微软雅黑";
+}
+/*导航部分+_+*/
+.nav-wrap{
+    width: 100%;
+    min-width: 1100px;
+    height: 120px;
+    background:url("../images/header_bg.jpg") no-repeat;
+}
+.nav{
+    height: 120px;
+    width: 1100px;
+    margin: 0 auto;
+    border-top: 30px solid transparent;
+}
+.nav>.title{
+    width: 420px;
+    height: 60px;
+    margin-left: 17px;
+    float: left;
+    background: url("../images/nav_logo.png") no-repeat 133px 0;
+}
+.nav>.title span{
+    font-size: 30px;
+    color: #fff;
+    margin-top: 10px;
+    float: left;
+    margin-right: 60px;
+}
+.nav ul{
+    margin-left: 53px;
+    float: left;
+    border-top:21px solid transparent ;
+}
+.nav li{
+    float: left;
+    color: #fff;
+    position: relative;
+    margin-left: 25px;
+    z-index:2;
+}
+.nav li a{
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+    margin-top: 2px;
+}
+.nav .down>span{
+    float: left;
+}
+.nav .down>a{
+    float: left;
+}
+.nav .down>.dot{
+    width: 24px;
+    background: url("../images/nav_xiajiantou.png") no-repeat;
+    background-size:cover;
+    float: left;
+    height: 24px;
+    margin-left: 12px;
+}
+.nav li>.active{
+    width:5px;
+    height:5px;
+    background:url("../images/nav_dot.png") no-repeat;
+    position:absolute;
+    bottom:-21px;
+    z-index: 3;
+    border-radius:50%;
+    left: 38%;
+}
+.nav .down_{
+    position: absolute;
+    top:23px;
+    border-top:24px solid transparent ;
+    left: -46px;
+    background: #36264a;
+    width: 180px;
+}
+.nav .down_ .title{
+    width: 100%;
+    height: 25px;
+    position: absolute;
+    top: -24px;
+    left: 0;
+}
+.nav .down_ .title:hover{
+    background: none;
+}
+.nav .down_>div{
+    height: 39px;
+    cursor: pointer;
+}
+.nav .down_ span{
+    float: left;
+    width:96px ;
+    margin-left: 26px;
+    text-align: center;
+    line-height: 39px;
+    height: 39px;
+}
+.nav .down_ a{
+    float: left;
+    margin-left: 23px;
+    height: 39px;
+    line-height: 39px;
+    display: none;
+}
+.nav li>a:hover{
+    color:#01cdd6;
+}
+.nav .down_>div:hover{
+    background: #01cdd6;
+    padding-left:10px;
+}
+.nav .down_>div:hover>a{
+    display: block;
+    font-weight: bold;
+}

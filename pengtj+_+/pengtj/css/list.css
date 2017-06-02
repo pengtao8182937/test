@@ -1,0 +1,226 @@
+.min .wrap{
+    border: 128px solid transparent;
+    background: #f1f2f6;
+}
+.nav-wrap{
+    width: 100%;
+    overflow: hidden;
+}
+.min{
+    margin: 0 auto;
+    max-width: 1500px;
+    background: #f1f2f6;
+    overflow: hidden;
+}
+.html{
+    background: #f1f2f6;
+}
+.min .title{
+    color: #311759;
+    font-size: 54px;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+.min h1{
+    font-size: 18px;
+    color: #311759;
+    width: 100%;
+    letter-spacing: 5px;
+    text-align: center;
+}
+.dot{
+    width: 100%;
+    overflow: hidden;
+}
+.min .dot{
+    width: 35px;
+    height: 6px;
+    margin: 22px auto;
+    background: url("../images/sob/dot3.png") no-repeat;
+}
+#change{
+    width: 100%;
+    overflow: hidden;
+}
+.til{
+    width: 100%;
+    height: 55px;
+    color: #311759;
+    font-size: 30px;
+    position: relative;
+
+}
+.til div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/sob/bi.png") no-repeat -9px 0;
+}
+.til a{
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    float: right;
+    z-index: 3;
+}
+.til a:hover{
+    background: #fff;
+    opacity: .1;
+}
+#change .title{
+    height: 55px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+#change .main{
+    width: 100%;
+    overflow: hidden;
+}
+#change .main-wrap{
+    width: 100%;
+    overflow: hidden;
+}
+
+.main>div{
+    border-top: 30px solid transparent;
+    width: 100%;
+    height: 228px;
+}
+.items{
+    float: left;
+    padding: 32px 22px 34px 20px;
+    width: 495px;
+    border: 1px solid transparent;
+    overflow: hidden;
+    cursor: pointer;
+}
+.itm-Left{
+    margin-right: 20px;
+}
+.items .img{
+    float: left;
+    width: 260px;
+    height: 160px;
+    margin-right: 16px;
+}
+.items .right-cont{
+    float: left;
+    overflow: hidden;
+    width: 219px;
+}
+.items h1{
+    font-size: 20px;
+    margin-top: 20px;
+    color: #454548;
+    font-weight:normal ;
+    letter-spacing: 0;
+    text-align: left;
+}
+.items .font{
+    font-size: 14px;
+    color: #6b6a6f;
+    margin: 10px 0;
+}
+.items .content{
+    font-size: 14px;
+    color: #47464a;
+    line-height: 24px;
+}
+.items .bottom{
+    width: 100%;
+    overflow: hidden;
+}
+#change .bottom>div{
+    width: 103px;
+    margin: 0 auto;
+    border-top: 80px solid transparent;
+    padding-bottom: 20px;
+}
+#change .bottom .buttom{
+    width: 58px;
+    height: 58px;
+    margin: 0 auto;
+    border: none 0;
+    overflow: hidden;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+}
+#change .bottom .buttom>div{
+    width: 58px;
+    height: 116px;
+    position: absolute;
+    top: -58px;
+    left: 0;
+}
+#change .buttom>div>div{
+    width: 58px;
+    height: 58px;
+    border: none 0;
+    padding: 0;
+
+}
+#change .items{
+    position: relative;
+    background: #FFF;
+}
+#change i{
+    border: 10px solid transparent;
+    border-top: 10px solid #fff;
+    position: absolute;
+    top: 32px;
+    left: 0;
+}
+/*全屏定位*/
+.scroll{
+    width: 90px;
+    height: 165px;
+    position: fixed;
+    bottom: 150px;
+    right: 50px;
+}
+.scroll .title{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+    margin-left:15px;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+.scroll .title>.div{
+    width: 50px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ti1{
+    background: url("../images/xubi.png") no-repeat -18px -1px;
+    width: 50px;
+    height: 50px;
+}
+.ti2{
+    background: url("../images/xubi.png") no-repeat -18px -53px;
+    width: 50px;
+    height: 50px;
+}
+.email{
+    width: 90px;
+    height: 90px;
+    background: url("../images/xubi.png") no-repeat 0 -104px;
+    cursor: pointer;
+    position: relative;
+}
+.email div{
+    position: absolute;
+    top: 27px;
+    left: -137px;
+    background: red;
+    width: 150px;
+    height: 35px;
+    background: url("../images/....png") no-repeat;
+}
