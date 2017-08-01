@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wedding-dress</title>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link id="grid" rel="stylesheet" href=""/>
+    <style>
+        #wrap .title {
+            height: 120px;
+            text-align: center;
+            line-height: 120px;
+            background: #ebc3c5;
+            color: #fff;
+            font-size: 34px;
+        }
+        #wrap ul {
+            list-style: none;
+            margin: 10px 0 10px 0;
+            padding: 30px 0 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        #wrap ul a {
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            font-weight: 300;
+            cursor: pointer;
+            text-transform: uppercase;
+            background: #fafafa;
+            color: #232323;
+            letter-spacing: .2rem;
+            padding: 6px 15px;
+            margin: 0 5px 5px;
+            border: 1px solid transparent;
+        }
+
+        #wrap ul .active {
+            background: pink;
+            color: #fff;
+        }
+
+        #wrap ul a:hover{
+            background: pink;
+            color: #fff;
+        }
+        .w-img > div{
+            float: left;
+            overflow: hidden;
+        }
+        .w-img .font{
+            position: absolute;
+            top: 0;
+            left: 5%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.31);
+            transition: all 0.5s linear;
+            opacity: 0;
+            z-index: 3;
+        }
+        .w-img .s-5-3-1{
+            position: relative;
+            margin: 8px 0;
+        }
+        .w-img > div img{
+            width: 100%;
+            height: 100%;
+            transition: all 0.5s linear;
+
+        }
+        .w-img > div .img{
+            margin-left: 5%;
+            transition: all 0.5s linear;
+            overflow: hidden;
+        }
+        .w-img .item {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 70%;
+            height: 40%;
+            z-index: 3;
+        }
+        .w-img .item .item-top{
+            padding: 8px 15px;
+            text-align: right;
+            width: 74%;
+            position: absolute;
+            top: -56px;
+            transition: all 0.5s linear;
+            left: 0;
+            color: #fff;
+            font-size: 14px;
+            background:#000 url("images/article/a_0.jpg") no-repeat 13px 13px;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        .w-img .item .item-bottom{
+            padding: 8px 15px;
+            text-align: right;
+            width: 74%;
+            position: absolute;
+            transition: all 0.5s linear;
+            bottom: -56px;
+            left: 0;
+            color: #fff;
+            font-size: 14px;
+            background:#000 url("images/article/a_1.jpg") no-repeat 13px 12px;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        .details{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            z-index: 0;
+            transition: all 0.5s linear;
+            background: rgba(255, 255, 255, 0.91);
+            opacity: 0;
+        }
+        .dom{
+            width: 90%;
+            margin: 5%;
+            overflow: hidden;
+            border-radius: 15px;
+            transition: all 0.5s linear;
+            border: 1px solid #959595;
+            box-shadow: 1px 1px 5px #959595;
+
+        }
+        .dom>div{
+            float: left;
+            margin-top: 5%;
+        }
+        .dom .s-5-1{
+            float: right;
+        }
+        .dom img{
+            width: 90%;
+            margin: 0 5%;
+        }
+        .dom h3{
+            margin: 0 5% 15px;
+            font-weight: 400;
+            line-height: 1.2;
+            color: #37474f;
+        }
+        .dom .title{
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 300;
+        }
+        .dom .s-7-1 .price{
+            font-size: 28px;
+            margin: 24px 5%;
+        }
+        .dom .s-7-1>div{
+            margin: 0 5%;
+        }
+        .dom p{
+            margin: 0 5%;
+            text-align: left;
+            font-size: 14px;
+            padding: 0;
+        }
+        .dom .s-7-1 .time{
+            border: 1px solid #959595;
+            width: 30%;
+            border-radius:5px ;
+            margin: 15px 5%;
+            position: relative;
+            height: 30px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .dom .s-7-1 .time a{
+            cursor: pointer;
+            height: 100%;
+            width: 50px;
+            line-height: 30px;
+        }
+        .dom .s-7-1 .time a:hover{
+            background: #000;
+            color: #fff;
+        }
+        .dom .s-7-1 .time span{
+            position: absolute;
+            left: 45%;
+            line-height: 30px;
+        }
+        .shop{
+            margin: 15px;
+            overflow: hidden;
+        }
+        .shop>div{
+            float: left;
+            cursor: pointer;
+        }
+        .shop .shop1{
+            padding: 8px;
+            background: #000;
+            color: #fff;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        .shop .shop2{
+            padding: 8px 8px 8px 16px;
+            background: #000;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .shop>div:hover{
+            opacity: .7;
+        }
+        .dom .s-7-1 .footer{
+            margin-top: 66px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+        .return{
+            position: absolute;
+            top: 1%;
+            right: 8%;
+            cursor: pointer;
+        }
+        .return:hover{
+            color: pink;
+        }
+        .details .btn{
+            position: absolute;
+            top: 45%;
+            font-size: 34px;
+            cursor: pointer;
+        }
+        .details .left{
+            left: 0;
+        }
+        .details .left:hover{
+            left: -5px ;
+            color: pink;
+        }
+        .details .right{
+            right: 0;
+        }
+        .details .right:hover{
+            right: -5px ;
+            color: pink;
+        }
+
+    </style>
+</head>
+<body>
+<!--头部logo-->
+<div class="logo">
+    <div class="img">
+        <img src="images/monique.jpg" alt=""/>
+    </div>
+    <div class="select">
+        <img src="images/select.jpg" alt=""/>
+    </div>
+</div>
+
+
+
+<!--侧导航-->
+<div id="nav">
+    <div class="title">
+        <span>注册</span>
+        <span>登录</span>
+        <a>关闭</a>
+    </div>
+    <div class="left">
+        <i></i>
+        <div class="scroll">
+            <div class="btn">
+                <div class="input">
+                    <input type="text"/>
+            <span>
+                <img src="images/search_logo.jpg" alt=""/>
+            </span>
+                </div>
+            </div>
+            <div class="item">
+                <span>网站首页</span>
+                <a></a>
+            </div>
+            <div class="item">
+                <span>品牌介绍</span>
+                <a class="down-a">&#43;</a>
+                <div class="down">
+                    <span>品牌介绍</span>
+                    <br/>
+                    <span>联系我们</span>
+                </div>
+            </div>
+            <div class="item">
+                <span>婚纱礼服</span>
+                <a class="down-a">&#43;</a>
+                <div class="down">
+                    <span>全部</span>
+                    <span>2016秋冬系列</span>
+                    <span>2016春夏系列</span>
+                    <span>2017春夏系列</span>
+                </div>
+            </div>
+            <div class="item">
+                <span>婚礼系列</span>
+                <a class="down-a">&#43;</a>
+                <div class="down">
+                    <span>全部</span>
+                    <span>2017/FW秋冬系列</span>
+                    <span>2017/SS春夏系列</span>
+                    <span>2016/FW秋冬系列</span>
+                    <span>2016/SS春夏系列</span>
+                </div>
+            </div>
+            <div class="item">
+                <span>博客文章</span>
+                <a></a>
+            </div>
+            <div class="item">
+                <span>联系我们</span>
+                <a></a>
+            </div>
+            <div class="font">
+                <span>DECA<br/>四川省成都市高新区岳麓大街体育西路<br/>岳麓南路256号<br/></span>
+                <a>
+                    12345678@qq.com
+                </a>
+            <span>
+                <br/>86-1234567890
+            </span>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="right">
+        <div class="img">
+            <img src="images/nav_left.jpg" alt=""/>
+        </div>
+    </div>
+</div>
+
+<!--主体-->
+<div id="wrap">
+    <div class="s-12 title">
+        婚纱礼服
+    </div>
+    <ul class="ul">
+        <li>
+            <a href="Wedding-dress.html?0" class="link active" title="全部">全部</a>
+        </li>
+        <li>
+            <a href="Wedding-dress.html?1" title="2016秋冬系列" class="link ">2016秋冬系列</a>
+        </li>
+        <li>
+            <a href="Wedding-dress.html?2" title="2016春夏系列" class="link ">2016春夏系列</a>
+        </li>
+        <li>
+            <a href="Wedding-dress.html?3" title="2017春夏系列" class="link ">2017春夏系列</a>
+        </li>
+    </ul>
+    <div class="s-12 w-img">
+        <div class="s-5-3-1">
+            <div class="s-9 font" >
+                <div class="item">
+                    <div class="item-top">快速查看</div>
+                    <div class="item-bottom">查看详情</div>
+                </div>
+            </div>
+
+            <div class="img s-9">
+                <img src="images/article/article_00.jpg" alt=""/>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--详情-->
+<div class="details">
+    <div class="btn left">←</div>
+    <div class="btn right">→</div>
+    <div class="dom">
+        <div class="s-5-1">
+            <img src="" alt=""/>
+        </div>
+        <div class="s-7-1">
+            <h3></h3>
+            <div class="data">
+                婚纱可单指身上穿的服饰， 也可以包括头纱、捧花部分。婚纱的颜色，款式等视乎各项因素，包括文化，宗教及时装潮流等。婚纱来自西方，有别于以红色为主的中式传统裙褂。白色婚纱代表内心的纯洁，后来逐渐演变为童贞的象征。鱼尾裙摆凸显瘦窄的设计概念，展现新娘美丽性感的腰身，膝部以下突如美人鱼尾般的宽广裙襬，尽显新娘独有的韵致，是一款非常能够表达服饰与人气质融合为一的婚纱。
+            </div>
+            <div class="price"></div>
+            <p>数量</p>
+            <div class="time">
+                <a style="float: left;border-right:1px solid #959595">+</a>
+                <span>1</span>
+                <a style="float: right;border-left:1px solid #959595">-</a>
+            </div>
+            <div class="shop">
+                <div class="shop1">立即购买</div>
+                <div class="shop2">加入购物车</div>
+            </div>
+            <div class="footer">
+                查看详情+
+            </div>
+        </div>
+        <div class="return">
+            返回
+        </div>
+        <div class="animate"></div>
+
+
+    </div>
+</div>
+
+
+<!--底部-->
+<div id="footer">
+    <div class="img">
+        <img src="images/monique.jpg" alt=""/>
+    </div>
+    <div class="alink">
+        <a>品牌介绍</a><span>/</span>
+        <a>婚纱礼服</a><span>/</span>
+        <a>婚礼系列</a><span>/</span>
+        <a>博客文章</a><span>/</span>
+        <a>联系我们</a>
+    </div>
+    <p>我的网站 版权所有 2008-2014 湘ICP备8888888</p>
+    <p>本页面内容为网站演示数据，前台页面内容都可以在后台修改。</p>
+    <p>Powered by METINFO 5.3.16</p>
+</div>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/move.js"></script>
+<script src="js/grid.js"></script>
+<script>
+    //获取search值
+    var iActive = location.search.split("?")[1];
+    var a = $(".ul a");
+    a.removeClass('active');
+    a.eq(iActive).addClass('active');
+
+    //导入dom
+    var itemImg = $(".w-img");
+    var itemImgStr = '';
+    for(var i=0; i<10; i++){
+        itemImgStr += itemImg.html().split("00").join('0'+i)
+    }
+    itemImg.html(itemImgStr);
+
+    //获取dom
+    var itemFont = itemImg.find(".font");
+    var itemBottom = itemImg.find(".item-bottom");
+    var itemTop = itemImg.find(".item-top");
+    var Img = itemImg.find("img");
+
+    //hover效果
+    itemImg.find(".s-5-3-1").hover(function(){
+        var i = $(this).index();
+        itemFont.eq(i).css({'opacity':"1"});
+        itemBottom.eq(i).css({'bottom':"0"});
+        itemTop.eq(i).css({'top':"0"});
+        Img.eq(i).css({"transform":"scale(1.1)"})
+    },function(){
+        var i = $(this).index();
+        itemFont.eq(i).css({'opacity':"0"});
+        itemBottom.eq(i).css({'bottom':"-56px"});
+        itemTop.eq(i).css({'top':"-56px"});
+        Img.eq(i).css({"transform":"scale(1)"})
+    });
+
+    //快速查看
+    var quickView = $('.item-top');
+    quickView.click(function(){
+
+        var fa = $(this).parentsUntil(".w-img")[2];
+        var domSrcNum = $(fa).find(".img img")[0].src.slice(-5,-4);
+        var details = $('.details');
+        var left = details.find(".left");
+        var right = details.find('.right');
+        quick(domSrcNum);
+        details.css({opacity:"1",zIndex:'60'});
+        var wrap = $('#wrap');
+        wrap.css({height:"0"});
+        if(domSrcNum==0){
+            left.css({display:'none'});
+            right.css({display:'block'})
+        }else if(domSrcNum==9){
+            right.css({display:'none'});
+            left.css({display:'block'});
+        }else{
+            left.css({display:'block'});
+            right.css({display:'block'})
+        }
+
+    });
+
+    //返回
+    var returnBtn = $(".return");
+    returnBtn.click(function(){
+        var details = $('.details');
+        details.css({opacity:"0",zIndex:'0'});
+        var wrap = $('#wrap');
+        wrap.css({height:"auto"})
+    });
+    //切换
+    var details = $('.details');
+    var left = details.find(".left");
+    var right = details.find('.right');
+    left.click(function(){
+        right.css({display:'block'});
+        var num = details.find('img')[0].src.slice(-5,-4)-1;
+        if(num <= 0){
+            $(this).css({display:'none'})
+        }
+        quick(num);
+
+    });
+    right.click(function(){
+        left.css({display:'block'});
+        var num = parseInt(details.find('img')[0].src.slice(-5,-4))+1;
+        if(num >= 9){
+            $(this).css({display:'none'})
+        }
+        quick(num)
+    });
+
+
+    //点击加减
+    var clickA = $(".details a");
+    clickA.eq(0).click(function(){
+        var num = clickA.eq(0).next().html();
+        if(num > 0){
+            num--;
+            clickA.eq(0).next().html(num)
+        }
+    });
+    clickA.eq(1).click(function(){
+        var num = clickA.eq(0).next().html();
+        num++;
+        clickA.eq(0).next().html(num)
+    });
+
+
+    function  quick(num){
+        var details = $(".details");
+        var img = details.find('img');
+        var fontTitle = details.find('h3');
+        var fontPrice = details.find('.price');
+        img[0].src = 'images/article/article_0'+num+'.jpg';
+        fontTitle.html(quData.title[num]);
+        fontPrice.html(quData.price[num]);
+        var dom = details.find(".dom");
+    }
+</script>
+</body>
+</html>

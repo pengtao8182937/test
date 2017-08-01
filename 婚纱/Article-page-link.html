@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Article page link</title>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <style>
+        #wrap .title{
+            height: 120px;
+            text-align: center;
+            line-height: 120px;
+            background: #ebc3c5;
+            color: #fff;
+            font-size: 34px;
+        }
+        .article{
+            overflow: hidden;
+        }
+        .article .s-3-12{
+            float: left;
+        }
+        .main-a-1 img{
+            width: 90%;
+            margin: 25px 5% 0;
+            cursor: pointer;
+            transition: all .2s linear;
+        }
+        .main-a-1 h1{
+            font-size: 12px;
+            color: #959595;
+            padding: 15px 5%;
+        }
+
+        .main-a-1 a{
+            font-size: 14px;
+            color: #000;
+            line-height: 16px;
+            display: block;
+            overflow: hidden;
+            margin-left: 5%;
+        }
+        .main-a-1 a:hover{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .main-a-1 span{
+            color: #959595;
+            display: block;
+            width: 95%;
+            padding-top: 15px;
+            font-size: 14px;
+            line-height: 16px;
+            padding-left: 5%;
+            margin-bottom: 25px;
+        }
+        .zz{
+            margin-left: 5%;
+            background: rgb(250, 250, 250);
+            margin-top: 25px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 35px;
+        }
+        .zz .img{
+            margin: 35px auto;
+            width: 64px;
+        }
+        .zz h3{
+            line-height: 32px;
+            font-weight: 400;
+            font-style: normal;
+            color: #323232;
+            font-size: 24px;
+            letter-spacing: .08rem;
+            margin-top: 20px;
+            margin-bottom: 25px;
+        }
+        .zz a{
+            margin: 0;
+        }
+        .zz a:hover{
+            color: pink;
+            text-decoration: none;
+        }
+        .article .btn{
+            margin:25px 5%;
+            width: 80%;
+            border: 1px solid #919191;
+            border-radius: 36px;
+        }
+        .article .btn input{
+            outline: none;
+            margin: 5px  0 5px 20px;
+            width: 79%;
+            border: none 0;
+        }
+        .article .btn span{
+            cursor: pointer;
+            float: right;
+            margin-right: 3%;
+            margin-top: 1%;
+        }
+        h2{
+            font-size: 18px;
+            font-weight: 500;
+            margin: 0 0 30px;
+            padding-left: 5%;
+            line-height: 1.5;
+            color: #323232;
+            letter-spacing: 0;
+            position: relative;
+        }
+        .main-w div{
+            padding-left: 5%;
+            font-weight: 400;
+            color: #323232;
+            font-size: 15px;
+            line-height: 34px;
+            cursor: pointer;
+        }
+        .s-img{
+            margin-left: 5%;
+            overflow: hidden;
+        }
+        .s-img div{
+            float: left;
+            overflow: hidden;
+            width: 99%;
+        }
+        .s-img div img{
+            width: 90%;
+            margin: 5%;
+            height: 90px;
+            cursor: pointer;
+        }
+        .ak47 .item{
+            display: none;
+        }
+    </style>
+    <link id="grid" rel="stylesheet" href=""/>
+</head>
+<body>
+<!--头部logo-->
+<div class="logo">
+    <div class="img">
+        <img src="images/monique.jpg" alt=""/>
+    </div>
+    <div class="select">
+        <img src="images/select.jpg" alt=""/>
+    </div>
+</div>
+
+<!--侧导航-->
+<div id="nav">
+    <div class="title">
+        <span>注册</span>
+        <span>登录</span>
+        <a>关闭</a>
+    </div>
+    <div class="left">
+        <i></i>
+        <div class="scroll">
+            <div class="btn">
+                <div class="input">
+                    <input type="text"/>
+            <span>
+                <img src="images/search_logo.jpg" alt=""/>
+            </span>
+                </div>
+            </div>
+            <div class="item">
+                <span>网站首页</span>
+                <a></a>
+            </div>
+            <div class="item">
+                <span>品牌介绍</span>
+                <a class="down-a">&#43;</a>
+                <div class="down">
+                    <span>品牌介绍</span>
+                    <br/>
+                    <span>联系我们</span>
+                </div>
+            </div>
+            <div class="item">
+                <span>婚纱礼服</span>
+                <a class="down-a">&#43;</a>
+                <div class="down">
+                    <span>全部</span>
+                    <span>2016秋冬系列</span>
+                    <span>2016春夏系列</span>
+                    <span>2017春夏系列</span>
+                </div>
+            </div>
+            <div class="item">
+                <span>婚礼系列</span>
+                <a class="down-a">&#43;</a>
+                <div class="down">
+                    <span>全部</span>
+                    <span>2017/FW秋冬系列</span>
+                    <span>2017/SS春夏系列</span>
+                    <span>2016/FW秋冬系列</span>
+                    <span>2016/SS春夏系列</span>
+                </div>
+            </div>
+            <div class="item">
+                <span>博客文章</span>
+                <a></a>
+            </div>
+            <div class="item">
+                <span>联系我们</span>
+                <a></a>
+            </div>
+            <div class="font">
+                <span>DECA<br/>四川省成都市高新区岳麓大街体育西路<br/>岳麓南路256号<br/></span>
+                <a>
+                    12345678@qq.com
+                </a>
+            <span>
+                <br/>86-1234567890
+            </span>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="right">
+        <div class="img">
+            <img src="images/nav_left.jpg" alt=""/>
+        </div>
+    </div>
+</div>
+
+<div id="wrap">
+    <div class="s-12 title">
+        博客文章
+    </div>
+    <div class="s-12 article">
+        <div class="ak47 s-12 main-a-1">
+            <div class="item">
+                <div class="img animated fadeInUp wow ">
+                    <img title="幕后:2018年春季婚礼" src="images/article/article00.jpg" alt=""/>
+                </div>
+                <div class="font animated fadeInUp wow">
+                    <h1>2017-05-17</h1>
+                    <a>幕后:2018年春季婚礼</a>
+                    <div></div>
+                    <span>The Spring 2018 bride enters the room with a regal sense of grace to offer a tulle-gloved hand.Chandelier boleros anoint shoulders with a sense of ceremony, whi..</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img animated fadeInUp wow ">
+                    <img title="对人友好 甜美婚纱穿着没有高难度也很美" src="images/article/article01.jpg" alt=""/>
+                </div>
+                <div class="font animated fadeInUp wow">
+                    <h1>2017.05.18</h1>
+                    <a>对人友好 甜美婚纱穿着没有高难度也很美</a>
+                    <div></div>
+                    <span>很多女孩都有一个梦想，就是穿上像童话里的公主般甜美梦幻的婚纱，嫁给自己的那个他。相对于高贵的女神范儿鱼尾款式，或者超大拖尾的款式，甜美风格的婚纱对我们普通人更加友好，穿着没有高难度却亲切可人，深受新娘们的喜爱。（婚纱来自Oscar de la Renta。）...</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img animated fadeInUp wow ">
+                    <img title="90后把婚礼做成艺术！你心中的完美婚礼什么样？" src="images/article/article02.jpg" alt=""/>
+                </div>
+                <div class="font animated fadeInUp wow">
+                    <h1>2017.05.18</h1>
+                    <a>90后把婚礼做成艺术！你心中的完美婚礼什么样？</a>
+                    <div></div>
+                    <span>五一劳动节刚过，换言之就已经进入到了婚礼季了。你有收到“红色炸弹”吗？对于婚礼来说最重要的就是婚宴现场，如果你还没准备就绪那么不妨看看这些给你点灵感吧！自从“90后”也开始加入了中年人的行列，婚礼大军中的主力也自然成了“90后”。那些曾经被称为“非主流”90后...</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img animated fadeInUp wow ">
+                    <img title="最新2018年春夏季Berta婚纱系列"  src="images/article/article03.jpg" alt=""/>
+                </div>
+                <div class="font animated fadeInUp wow">
+                    <h1>2017.05.18</h1>
+                    <a>最新2018年春夏季Berta婚纱系列</a>
+                    <div></div>
+                    <span>2018纽约春夏婚纱周刚刚结束，有没有被各种新款的婚纱美晕？以色列著名婚纱品牌Berta也推出了2018年春夏季婚纱，典雅的轮廓，精致的刺绣和蕾丝，还有华丽的大裙摆，都为各位渴望优雅出嫁的准新娘提供了多样的选择。...</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img animated fadeInUp wow ">
+                    <img title="浪漫薄纱 圆你梦幻公主梦"  src="images/article/article04.jpg" alt=""/>
+                </div>
+                <div class="font animated fadeInUp wow">
+                    <h1>2017.05.18</h1>
+                    <a>浪漫薄纱 圆你梦幻公主梦</a>
+                    <div></div>
+                    <span>轻薄的纱质面料是最重要的婚纱面料之一，打造梦幻感新娘造型全靠它了。刚刚结束的纽约2018春夏婚纱周上，当然也少不了纱质婚纱的身影。无论是技艺高超的立体花卉造型，或是精致典雅的刺绣图案，还有浪漫的超大裙摆，都能满足各位新娘的公主梦！（婚纱来自Viktor &am...</span>
+                </div>
+            </div>
+        </div>
+        <div class="ak47 s-12 main-a-1">
+            <div class="item">
+                <div class="img animated fadeInUp wow">
+                    <img title="巴黎时装周：东西方古典的交融，浪漫与华贵"  src="images/article/article05.jpg" alt=""/>
+                </div>
+                <div class="font animated fadeInUp wow">
+                    <h1>2017.05.18</h1>
+                    <a>巴黎时装周：东西方古典的交融，浪漫与华贵</a>
+                    <div></div>
+                    <span>用520的谐音“我爱你”来寓意爱情、幸福和甜蜜，520幸福国境就是这样一个传达爱情至高的想像实现地，巴黎婚纱斥千万巨资打造的婚纱摄影地带。作为梦想先行者，520幸福国境占地幅员广阔，共计约520000平方米，以‘镇’为局链结周围美景腹地，自成壮观国境，可谓是婚...</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img animated fadeInUp wow">
+                    <img title="最in新娘情报速递：新娘项链搭配哲学 领型才是大boss"  src="images/article/article06.jpg" alt=""/>
+                </div>
+                <div class="font animated fadeInUp wow">
+                    <h1>2017.05.18</h1>
+                    <a>最in新娘情报速递：新娘项链搭配哲学 领型才是大boss</a>
+                    <div></div>
+                    <span>婚戒虽然具有重要含义，但是在婚礼上，吸引最多目光的一件婚嫁新娘珠宝一定是项链，因为它正好位于人们平视时的目光区域内，又足够华丽醒目，想必各位准新娘也一定没少在选项链上下功夫。不过要说这幕后“大boss”，那一定是婚纱的领型了，项链只有与他搞好关系才能相得益彰相...</span>
+                </div>
+            </div>
+            <div class="item animated fadeInUp wow">
+                <div class="img animated fadeInUp wow">
+                    <img title="夏季婚礼不想汗流浃背 这些婚纱为你降温"  src="images/article/article07.jpg" alt=""/>
+                </div>
+                <div class="font">
+                    <h1>2017.05.18</h1>
+                    <a>夏季婚礼不想汗流浃背 这些婚纱为你降温</a>
+                    <div></div>
+                    <span>夏季的婚礼拥有诸多优势，比如说可以在海边享受阳光海风，在花园伴着花香起舞，可只有一点让人望而却步，那就是夏季炎热的天气太容易让人汗流浃背、形象尽失了。别担心，今天带大家欣赏的这些婚纱，或轻薄飘逸，或设计简洁，都是最适合夏季婚礼的清凉款式，看着就已经让人眼球“降...</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img  animated fadeInUp wow">
+                    <img title="浪漫薄纱 圆你梦幻公主梦"  src="images/article/article08.jpg" alt=""/>
+                </div>
+                <div class="font animated fadeInUp wow">
+                    <h1>2017.05.17</h1>
+                    <a>2018纽约春夏婚纱周最优雅婚纱</a>
+                    <div></div>
+                    <span>准新娘对婚纱的要求，除了要梦幻、要浪漫之外，有的人就希望穿上一件优雅的婚纱，像个淑女一般美美得出嫁。在2018纽约春夏婚纱周上，就有这么一些婚纱，通过修身的轮廓、精致的刺绣和飘逸的面料，成为最优雅的选择。2018年春夏季婚纱，典雅的轮廓，精致的刺绣和蕾丝，还有...</span>
+                </div>
+            </div>
+        </div>
+        <div class="s-12">
+            <div class="zz s-9 main-a-1 animated fadeInUp wow">
+                <div class="img animated tada wow ">
+                    <img src="images/article/article-s.jpg" alt=""/>
+                </div>
+                <h3>作者</h3>
+                <span>欢迎您光临我们公司，我们提供最优质的服务，欢迎您的光临。</span>
+                <a href="Article-page.html">查看全部</a>
+            </div>
+            <div class="btn s-9">
+                <div class="input s-9">
+                    <input placeholder="Search" type="text" class=""/>
+            <span class=" animated tada wow">
+                <img src="images/search_logo.jpg" alt=""/>
+            </span>
+                </div>
+            </div>
+            <h2>为你推荐</h2>
+            <div class="main-a-1 main-w">
+                <div class=" animated fadeInUp wow" title="幕后:2018年春季婚礼">幕后:2018年春季婚礼</div>
+                <span class=" animated fadeInUp wow">2017-05-17</span>
+                <div class=" animated fadeInUp wow" title="对人友好 甜美婚纱穿着没有高难度也很美">对人友好 甜美婚纱穿着没有高难度也很美</div>
+                <span class=" animated fadeInUp wow">2017-05-18</span>
+                <div class=" animated fadeInUp wow" title="90后把婚礼做成艺术！你心中的完美婚礼什么样？">90后把婚礼做成艺术！你心中的完美婚礼什么样？</div>
+                <span class=" animated fadeInUp wow">2017-05-18</span>
+                <div class=" animated fadeInUp wow" title="最新2018年春夏季Berta婚纱系列">最新2018年春夏季Berta婚纱系列</div>
+                <span class=" animated fadeInUp wow">2017-05-18</span>
+                <div class=" animated fadeInUp wow" title="浪漫薄纱 圆你梦幻公主梦">浪漫薄纱 圆你梦幻公主梦</div>
+                <span class=" animated fadeInUp wow">2017-05-18</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--底部-->
+<div id="footer">
+    <div class="img">
+        <img src="images/monique.jpg" alt=""/>
+    </div>
+    <div class="alink">
+        <a>品牌介绍</a><span>/</span>
+        <a>婚纱礼服</a><span>/</span>
+        <a>婚礼系列</a><span>/</span>
+        <a>博客文章</a><span>/</span>
+        <a>联系我们</a>
+    </div>
+    <p>我的网站 版权所有 xxxx-xxxx 湘ICP备8888888</p>
+    <p>本页面内容为网站演示数据，前台页面内容都可以在后台修改。</p>
+    <p>Powered by METINFO 5.3.16</p>
+</div>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/move.js"></script>
+<script src="js/grid.js"></script>
+<script>
+    new WOW().init();
+
+    var item = $('.ak47 .item');
+    var num = location.search.slice(1,2);
+    item.eq(num).css({display:'block'})
+
+
+
+
+</script>
+</body>
+</html>

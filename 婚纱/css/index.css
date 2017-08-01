@@ -1,0 +1,455 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family:微软雅黑 ;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.logo{
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(255, 255, 255);
+    height: 49px;
+    z-index: 5;
+    opacity: 0.7;
+}
+.logo .img{
+    width: 256px;
+    height: 49px;
+    margin: 0 auto;
+}
+.logo .select{
+    display: none;
+}
+
+/*侧导航*/
+#nav{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    color: #7a7a7a;
+}
+#nav .title{
+    float: left;
+    width: 100%;
+    height: 65px;
+    margin-left: 36px;
+}
+#nav .title span{
+    border: 1px dashed #919191;
+    padding: 8px 15px;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#nav .title span:hover{
+    border-color:pink ;
+    color: pink;
+}
+#nav .title a{
+    float: right;
+    display: none;
+    margin-right: 80px;
+    border-top: 20px solid transparent;
+}
+#nav .title a:hover{
+    color: pink;
+    cursor: pointer;
+}
+#nav .left{
+    float: left;
+    width: 89%;
+    border-right: 1px solid transparent;
+    position: relative;
+    overflow: scroll;
+    overflow-x:hidden;
+}
+#nav .scroll{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95%;
+}
+#nav .scroll i{
+    width: 8px;
+    height: 15px;
+    background: #959595;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.6;
+    cursor: pointer;
+    z-index: 40;
+
+}
+#nav .right{
+    float: left;
+    width: 10%;
+    position: relative;
+}
+#nav .right .img{
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 11px ;
+    height: 70px;
+    cursor: pointer;
+}
+#nav .left .btn{
+    width: 100%;
+    height: 36px;
+    margin-bottom: 35px;
+    margin-left: 36px;
+}
+#nav .left .input{
+    width: 80%;
+    height: 34px;
+    border: 1px solid #919191;
+    border-radius: 18px;
+}
+#nav .left input{
+    float: left;
+    margin: 8px 0 7px 17px;
+    width: 90%;
+    outline: none;
+    border: 0 none;
+}
+#nav .left .input span{
+    float: left;
+    margin-top: 8px;
+    cursor: pointer;
+}
+#nav .left .item{
+    margin-bottom: 28px;
+    width: 90%;
+    overflow: hidden;
+    margin-left: 36px;
+}
+#nav .down{
+    width: 85%;
+    float: left;
+    margin-top: 28px;
+    margin-left: 5%;
+    overflow: hidden;
+    display: none;
+}
+#nav .down span{
+    width: 100%;
+    margin-bottom: 15px;
+}
+#nav .left .item span{
+    float: left;
+}
+#nav .left .item span:hover{
+    color: pink;
+    cursor: pointer;
+}
+#nav .left .item a{
+    float: right;
+    font-size: 21px;
+    width: 21px;
+    height: 21px;
+    cursor: pointer;
+    line-height: 21px;
+    margin-right: 36px;
+}
+#nav .left .font{
+    line-height: 24px;
+    margin-left: 36px;
+}
+#nav .left .font a{
+    cursor: pointer;
+    border-bottom:1px solid pink;
+}
+#nav .left .font a:hover{
+    border-bottom-color:#919191 ;
+}
+
+/*背景部分*/
+#wrap{
+    overflow: hidden;
+    margin: 60px auto 0;
+}
+.banner{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.banner-wrap{
+    width: 300%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+.banner-wrap .item{
+    float: left;
+}
+.banner-wrap .item img{
+    width: 100%;
+}
+.banner ul{
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+    width:100px ;
+}
+.banner ul li{
+    float: left;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background:#919191 ;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.banner ul .active{
+    background: #fff;
+}
+p{
+    text-align: center;
+    font-size: 24px;
+    padding: 30px 0 14px 0;
+    color: #595959;
+}
+.line1{
+    width: 90px;
+    height: 1px;
+    background: #919191;
+    margin: 0 auto 2px;
+}
+.line2{
+    width: 50px;
+    height: 1px;
+    background: #919191;
+    margin: 0 auto 5px;
+}
+.main1 .main1-img{
+    overflow: hidden;
+    margin-top: 30px;
+}
+.main1 .main1-img .item{
+    float: left;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+.main1 .main1-img .item img{
+    width: 95%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    transition: all .5s linear;
+}
+.main1 .main1-img .font{
+    width: 95%;
+    position: absolute;
+    height: 96%;
+    top: 0;
+    left: 0;
+    background: #fff;
+    opacity: 0;
+    transition: all .5s linear;
+}
+.main1 .main1-img .item:hover .font{
+    opacity: 0.8;
+    overflow: hidden;
+}
+.main1 .main1-img .item:hover img{
+    transform: scale(0.9);
+}
+.main1 .font p{
+    padding: 15% 10% 5%;
+    font-size: 14px;
+    color: #000;
+}
+.main1 .font span{
+    display: block;
+    padding: 5% 10%;
+    font-size: 10px;
+    color: #919191;
+}
+.main2{
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    overflow: hidden;
+}
+.main2>div img{
+    width: 100%;
+    height: 340px;
+}
+.main2>div{
+    float: left;
+}
+.main2 .w-7{
+    width: 60%;
+}
+.main2 .w-4{
+    width: 35%;
+    margin-left: 5%;
+}
+
+.main2 span{
+    font-size: 12px;
+    color: #919191;
+    margin-left: 30px;
+}
+.main3{
+    overflow: hidden;
+}
+.main3>div{
+    float: left;
+}
+.main3 .font{
+    width: 50%;
+    overflow: hidden;
+    margin-top: 30px;
+}
+.main3>.img{
+    width: 50%;
+    overflow: hidden;
+    margin-top: 30px;
+    float: right;
+}
+.main3>.img img{
+    width: 100%;
+}
+.main3 .item{
+    margin-bottom: 30px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.main3 .item .img{
+    float: left;
+    height: 100%;
+    width: 25%;
+}
+.main3 .item .img img{
+    width: 90%;
+}
+.main3 .item>div{
+    float: left;
+    width: 70%;
+}
+.main3 .item>div h3{
+    font-weight: normal;
+}
+.main3 .item>div span{
+    color: #919191;
+    font-size: 14px;
+    line-height: 20px;
+}
+.main4{
+    margin-top: 80px;
+    margin-bottom: 80px;
+    background: url("../images/banner03.jpg")  no-repeat fixed 0 0;
+    background-size:100% ;
+    overflow: hidden;
+}
+.main4>.item{
+    float: left;
+    text-align: center;
+    padding: 50px 0;
+    background: rgba(255, 255, 255, 0.8);
+}
+.main4 .img{
+    color: #656565;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.main4 .font{
+    color: #656565;
+    font-size: 25px;
+}
+.main5{
+    margin-bottom: 80px;
+    overflow: hidden;
+}
+.main5>.s-6-1{
+    float: left;
+    margin-top: 50px;
+}
+.main5 img{
+    width: 95%;
+    transition: all .5s linear;
+    cursor: pointer;
+}
+.main5 h1{
+    font-size: 12px;
+    color: #959595;
+    padding: 15px 0;
+}
+
+.main5 a{
+    font-size: 14px;
+    color: #000;
+    line-height: 16px;
+}
+.main5 a:hover{
+    cursor: pointer;
+    border-bottom: 1px solid #000;
+}
+.main5 span{
+    color: #959595;
+    display: block;
+    width: 95%;
+    padding-top: 15px;
+    font-size: 14px;
+    line-height: 16px;
+}
+#footer .img{
+    width: 300px;
+    margin: 0 auto 50px;
+}
+#footer{
+    text-align: center;
+    padding-bottom: 50px;
+    background: #fafafa;
+    padding-top: 50px;
+}
+#footer p{
+    font-size: 14px;
+    color: #323232;
+    padding: 0;
+    margin: 0;
+    line-height: 24px;
+}
+
+#footer .alink{
+    margin-bottom: 20px;
+}
+#footer a{
+    cursor: pointer;
+    font-size: 14px;
+    color: #323232;
+}
+#footer span{
+    margin: 0 5px;
+    font-size: 14px;
+    color: #323232;
+}

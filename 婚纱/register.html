@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link id="grid" rel="stylesheet" href=""/>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #s-wrap{
+            width: 100%;
+            overflow: hidden;
+        }
+        .img {
+            margin: 0 50px 30px 50px;
+            float: left;
+        }
+        #s-wrap>i{
+            float: left;
+            width: 2px ;
+            height: 20px ;
+            background: #959595;
+            margin-top: 10px;
+        }
+        #s-wrap>span{
+            float: left;
+            font-size: 20px ;
+            color: #000;
+            margin-top: 8px;
+            margin-left: 15px;
+        }
+        #s-wrap>a{
+            cursor: pointer;
+            float: right;
+            margin: 8px 15px 0 0;
+            color: #337ab7;
+        }
+        #s-wrap>a:hover{
+            border-bottom: 1px solid #959595;
+        }
+        .footer{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 14px;
+        }
+        .footer p{
+            font-size: 14px;
+            margin: 15px 0;
+            padding: 0;
+        }
+        .register{
+            width: 100%;
+            padding: 50px 0;
+            background:#efefef;
+        }
+        .reg-wrap{
+            width: 470px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 15px;
+            background: #fff;
+        }
+        .reg-wrap input{
+            display: block;
+            width: 94%;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            outline: none;
+            margin-bottom: 15px;
+        }
+        .reg-wrap .yan{
+            float: left;
+            width: 55%;
+        }
+        .reg-wrap i{
+            float: right;
+            width: 30%;
+            height: 36px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            outline: none;
+            margin-bottom: 15px;
+        }
+        .box{
+            text-align: center;
+            color: #555
+        }
+        .reg-wrap .item{
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .reg-wrap .item span{
+            float: left;
+            width: 30%;
+            line-height: 50px;
+        }
+        .reg-wrap .item input{
+            float: left;
+            width: 60%;
+        }
+        .reg-wrap button{
+            padding: 10px 16px;
+            font-size: 18px;
+            line-height: 1.3333333;
+            display: block;
+            width: 100%;
+            color: #fff;
+            background-color: #337ab7;
+            border: none 0;
+            cursor: pointer;
+        }
+        .reg-wrap a{
+            cursor: pointer;
+            float: right;
+            margin: 8px 15px 0 0;
+            color: #337ab7;
+        }
+    </style>
+</head>
+<body>
+<div id="s-wrap">
+    <div class="img">
+        <img src="images/monique.jpg" alt=""/>
+    </div>
+    <i></i>
+    <span>会员注册</span>
+    <a href="index.html">返回首页</a>
+</div>
+
+<div class="register">
+    <div class="reg-wrap">
+        <input type="text" placeholder="会员名"/>
+        <input type="text" placeholder="密码"/>
+        <input type="text" placeholder="重复密码"/>
+        <input class="yan" type="text" placeholder="验证吗"/>
+        <i></i>
+        <div style="clear: both"></div>
+        <div class="box">更多资料</div>
+        <div class="item">
+            <span>公司名称</span>
+            <input type="text" placeholder="公司名称"/>
+        </div>
+        <div class="item">
+            <span>公司传真</span>
+            <input type="text" placeholder="公司传真"/>
+        </div>
+        <div class="item">
+            <span>公司联系地址</span>
+            <input type="text" placeholder="公司联系地址"/>
+        </div>
+        <div class="item">
+            <span>公司邮政编码</span>
+            <input type="text" placeholder="公司邮政编码"/>
+        </div>
+        <div class="item">
+            <span>公司网址</span>
+            <input type="text" placeholder="公司网址"/>
+        </div>
+        <button>立即注册</button>
+        <a href="Sign.html">已有账号?</a>
+    </div>
+</div>
+
+<div class="footer">
+    <p>我的网站 版权所有 2008-2014 湘ICP备8888888 </p>
+    <p>本页面内容为网站演示数据，前台页面内容都可以在后台修改。</p>
+
+</div>
+
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/grid.js"></script>
+</body>
+</html>

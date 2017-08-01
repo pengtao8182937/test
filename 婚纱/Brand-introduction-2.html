@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brand-introduction</title>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link id="grid" rel="stylesheet" href=""/>
+    <style>
+        #wrap .title {
+            height: 120px;
+            text-align: center;
+            line-height: 120px;
+            background: #ebc3c5;
+            color: #fff;
+            font-size: 34px;
+        }
+
+        #wrap ul {
+            list-style: none;
+            margin: 10px 0 40px 0;
+            padding: 30px 0 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        #wrap ul a {
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            font-weight: 300;
+            cursor: pointer;
+            text-transform: uppercase;
+            background: #fafafa;
+            color: #232323;
+            letter-spacing: .2rem;
+            padding: 6px 15px;
+            margin: 0 5px 5px;
+            border: 1px solid transparent;
+        }
+
+        #wrap ul .active {
+            background: pink;
+            color: #fff;
+        }
+        .brand ul{
+            margin-bottom: 20px;
+        }
+        .brand>.item{
+            float: left;
+            overflow: hidden;
+        }
+        .brand>.item>div{
+            margin: 40px 60px 20px;
+            overflow: hidden;
+            height: 370px;
+        }
+        .brand h3{
+            margin-bottom: 50px;
+            text-align: left;
+            color: #323232;
+            font-weight: normal;
+            letter-spacing: 1px;
+            font-style: normal;
+            line-height: 28px;
+            font-size: 26px;
+            position: relative;
+        }
+        .brand h3:after{
+            background: #ccc;
+            content: "";
+            height: 1px;
+            width: 40px;
+            left: 0;
+            bottom: -18px;
+            position: absolute;
+        }
+
+        .brand h3:before{
+            background: #ccc;
+            content: "";
+            height: 1px;
+            width: 65px;
+            left: 0;
+            bottom: -15px;
+            position: absolute;
+        }
+        .brand>.item>.item{
+            text-align: left;
+            position: relative;
+            padding: 5px 5px;
+        }
+        .brand .font-max{
+            font-size: 16px;
+            width: 100%;
+            display: inline-block;
+            line-height: 30px;
+            color: #323232;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        .brand .font-min{
+            text-align: center;
+            clear: both;
+            font-size: 15px;
+            color: #656565;
+            line-height: 26px;
+        }
+        .brand textarea{
+            color: #323232;
+            font-size: 14px;
+            line-height: 24px;
+            padding: 6px 10px;
+            background-color: transparent;
+            border: none 0;
+            border-bottom: 1px solid #d1d1d1;
+            box-shadow: none;
+            box-sizing: border-box;
+            outline: none;
+            margin: 0;
+            width: 100%;
+            height: 90px;
+            resize:none
+        }
+        .brand input{
+            color: #323232;
+            font-size: 14px;
+            line-height: 24px;
+            height: 40px;
+            padding: 6px 10px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #d1d1d1;
+            border-radius: 0;
+            box-shadow: none;
+            box-sizing: border-box;
+            outline: none;
+            width: 100%;
+            margin-top: 25px;
+        }
+        .brand button{
+            background-color: #202020;
+            color: #fff;
+            margin-top: 10px;
+            font-weight: 500;
+            padding: 4px 20px;
+            display: inline-block;
+            position: relative;
+            line-height: 34px;
+            outline: 0;
+            letter-spacing: .03em;
+            transition: all .3s ease;
+            cursor: pointer;
+            border: none 0;
+        }
+        .brand button:hover{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+<!--头部logo-->
+<div class="logo">
+    <div class="img">
+        <img src="images/monique.jpg" alt=""/>
+    </div>
+    <div class="select">
+        <img src="images/select.jpg" alt=""/>
+    </div>
+</div>
+
+<!--侧导航-->
+<div id="nav">
+    <div class="title">
+        <span>注册</span>
+        <span>登录</span>
+        <a>关闭</a>
+    </div>
+    <div class="left">
+        <i></i>
+
+        <div class="scroll">
+            <div class="btn">
+                <div class="input">
+                    <input type="text"/>
+            <span>
+                <img src="images/search_logo.jpg" alt=""/>
+            </span>
+                </div>
+            </div>
+            <div class="item">
+                <span>网站首页</span>
+                <a></a>
+            </div>
+            <div class="item">
+                <span>品牌介绍</span>
+                <a class="down-a">&#43;</a>
+
+                <div class="down">
+                    <span>品牌介绍</span>
+                    <br/>
+                    <span>联系我们</span>
+                </div>
+            </div>
+            <div class="item">
+                <span>婚纱礼服</span>
+                <a class="down-a">&#43;</a>
+
+                <div class="down">
+                    <span>全部</span>
+                    <span>2016秋冬系列</span>
+                    <span>2016春夏系列</span>
+                    <span>2017春夏系列</span>
+                </div>
+            </div>
+            <div class="item">
+                <span>婚礼系列</span>
+                <a class="down-a">&#43;</a>
+
+                <div class="down">
+                    <span>全部</span>
+                    <span>2017/FW秋冬系列</span>
+                    <span>2017/SS春夏系列</span>
+                    <span>2016/FW秋冬系列</span>
+                    <span>2016/SS春夏系列</span>
+                </div>
+            </div>
+            <div class="item">
+                <span>博客文章</span>
+                <a></a>
+            </div>
+            <div class="item">
+                <span>联系我们</span>
+                <a></a>
+            </div>
+            <div class="font">
+                <span>DECA<br/>四川省成都市高新区岳麓大街体育西路<br/>岳麓南路256号<br/></span>
+                <a>
+                    12345678@qq.com
+                </a>
+            <span>
+                <br/>86-1234567890
+            </span>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="right">
+        <div class="img">
+            <img src="images/nav_left.jpg" alt=""/>
+        </div>
+    </div>
+</div>
+
+<!--主体-->
+<div id="wrap">
+    <div class="s-12 title">
+        品牌介绍
+    </div>
+    <div class="brand">
+        <ul>
+            <li><a href="Brand-introduction-1.html" class="link " title="品牌介绍">品牌介绍</a></li>
+            <li>
+                <a href="Brand-introduction-2.html" title="联系我们" class="link active">联系我们</a>
+            </li>
+
+        </ul>
+        <div class="s-6-12 item" style="background: #fafafa">
+            <div class="animated bounceInUp wow">
+                <h3>联系我们</h3>
+                <div class="item">
+                    <span class="font-max">EMAIL</span>
+                    <span class="font-min">123456789@qq.com</span>
+                </div>
+                <div class="item">
+                    <span class="font-max">ADDRESS</span>
+                    <span class="font-min">
+                        湖南省长沙市岳麓区
+                        <br/>
+                        岳麓路110号
+                    </span>
+                </div>
+                <div class="item">
+                    <span class="font-max">PHONE</span>
+                    <span class="font-min">
+                        +321 123 456 7
+                        <br/>
+                        +1 999 666 888
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="s-6-12 item" style="background: #efefef">
+            <div class="animated bounceInUp wow">
+                <h3>给我们留言</h3>
+                <textarea placeholder="您的需求 " rows="5"></textarea>
+                <input type="text" placeholder="您的姓名 ">
+                <input type="text" placeholder="联系方式 ">
+
+                <button type="submit">提交留言</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--底部-->
+<div id="footer">
+    <div class="img">
+        <img src="images/monique.jpg" alt=""/>
+    </div>
+    <div class="alink">
+        <a>品牌介绍</a><span>/</span>
+        <a>婚纱礼服</a><span>/</span>
+        <a>婚礼系列</a><span>/</span>
+        <a>博客文章</a><span>/</span>
+        <a>联系我们</a>
+    </div>
+    <p>我的网站 版权所有 xxxx-xxxx 湘ICP备8888888</p>
+
+    <p>本页面内容为网站演示数据，前台页面内容都可以在后台修改。</p>
+
+    <p>Powered by METINFO 5.3.16</p>
+</div>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/move.js"></script>
+<script src="js/grid.js"></script>
+<script>
+    new WOW().init();
+</script>
+</body>
+</html>
