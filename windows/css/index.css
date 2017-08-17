@@ -1,0 +1,697 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif, "新宋体";
+}
+li{
+    list-style: none;
+}
+img{
+    border: none 0;
+}
+#date{
+    text-align: center;
+    cursor: default;
+}
+#calendar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    z-index: 999;
+    height: 100%;
+    display: none;
+    overflow: hidden;
+    background: #474747;
+    border-left: 1px solid #6d6d6d;
+}
+.calendar-box{
+    padding-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.calendar-line{
+    width: 100%;
+    height: 1px;
+    background: #6d6d6d;
+}
+.calendar-today h1{
+    color: #fff;
+    font-weight: normal;
+    margin: 15px 0 5px;
+    cursor: default;
+}
+.calendar-today p{
+    color: #4298dc;
+    margin: 0 0 20px;
+    font-size: 14px;
+    cursor: default;
+}
+.calendar-today p:hover{
+    color: #6d6d6d;
+}
+.calender-main p span{
+    color: #dfdfdf;
+    cursor: default;
+}
+.calender-main p span:hover{
+    color: #fff;
+}
+.calender-main p a{
+    float: right;
+    cursor: default;
+    color: #dfdfdf;
+    margin-right: 24px;
+    font-size: 20px;
+}
+.calender-main p a:hover{
+    color: #fff;
+}
+.calender-main{
+    height: 337px;
+    position: relative;
+}
+.calendar-height{
+    height: 300px;
+    position: absolute;
+    top:38px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.calendar-rr-title span{
+    float: left;
+    width: 14.2%;
+    text-align: center;
+    color: #dfdfdf;
+    cursor: default;
+}
+.rr-item-banner-wrap{
+    height: 270px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.yy-item-banner-wrap, .nn-item-banner-wrap{
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.rr-item-banner{
+    height:810px ;
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    top: -270px;
+}
+.yy-item-banner, .nn-item-banner{
+    height: 900px;
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    top: -300px;
+    left: 0;
+}
+.rr-item-box{
+    overflow: hidden;
+}
+.yy-item-box, .nn-item-box{
+    width: 100%;
+    height: 300px;
+}
+.calendar-rr-item{
+    width: 100%;
+    height: 45px;
+}
+.calendar-rr-item>span{
+    float: left;
+    width: 14.2%;
+    text-align: center;
+    color: #dfdfdf;
+    cursor: default;
+    height: 45px;
+    line-height: 45px;
+}
+.yy-item-box span, .nn-item-box span{
+    float: left;
+    width: 25%;
+    height: 20%;
+    line-height: 60px;
+    cursor: default;
+    color: #dfdfdf;
+    position: relative;
+    text-align: center;
+}
+.nn-item-box span{
+    height: 33%;
+    line-height: 99px;
+}
+.yy-item-box .color, .nn-item-box .color{
+    color: #848484;
+}
+.calendar-rr-item>.color{
+    color: #848484;
+}
+.yy-item-box span i, .nn-item-box span i{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    background: #06c2dc;
+}
+.calender-main .active{
+    background:#0078d7 ;
+}
+#calendar-fn{
+    overflow: hidden;
+}
+#calendar-fn p a{
+    color: #dfdfdf;
+    cursor: default;
+    float: left;
+    margin-left: 5px;
+}
+#calendar-fn p span{
+    float: right;
+    color: #dfdfdf;
+    cursor: default;
+    margin-right: 15px;
+    font-size: 18px;
+}
+#calendar-fn p span:hover{
+    color: #848484;
+}
+.cal-main{
+    padding-left: 5px;
+    color: #dfdfdf;
+    font-size: 14px;
+}
+
+/*备忘录*/
+#opening-menu{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #121212;
+    height: 50px;
+    z-index: 999999;
+}
+#date{
+    float: right;
+    color: #fff;
+    margin: 8px 5px 8px 0 ;
+}
+.cal-main{
+    margin-top: 6px;
+}
+#bg-color{
+    width: 100%;
+    height: 100%;
+}
+#bg-color img{
+    width: 100%;
+    height: 100%;
+}
+#Memorandum{
+    width: 40%;
+    height: 60%;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+}
+#Memorandum li{
+    list-style: none;
+}
+#Memorandum p{
+    width: 100%;
+    height: 30px;
+    background: #135995;
+    color: #fff;
+    line-height: 30px;
+}
+#Memorandum p em{
+    margin-left: 15px;
+    cursor: default;
+}
+#Memorandum p a{
+    margin-left: 5px;
+    cursor: default;
+}
+#Memorandum p span{
+    float: right;
+    margin-right: 5px;
+}
+#Memorandum p span:hover{
+    opacity: 0.3;
+    cursor: default;
+}
+body{
+    height:500px;
+    background:url("../images/d_bg.jpg") center center;
+    background-size:100%;
+    user-select:none;
+    -moz-user-select:none;
+    -webkit-user-select:none;
+}
+.footer{
+    height:50px;
+    width:100%;
+    position:fixed;
+    bottom:0;
+    left:0;
+    background:rgba(255,255,255,0.2);
+    border-top:1px solid rgba(0,0,0,0.3);
+    z-index:999;
+}
+.start{
+    float:left;
+    width:70px;
+    height:50px;
+    background:url("../images/windows.png") 10px 2px no-repeat;
+    transition:background-image 0.5s ease;
+}
+.start:hover{
+    background-image:url("../images/windows_hover.png");
+}
+.menu{
+    position:fixed;
+    bottom:51px;
+    left:0;
+    width:407px;
+    height:592px;
+    border-radius:5px 5px 0 0;
+    background: #a59255;
+    display:none;
+    z-index:9;
+}
+.menu_cont_search{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #8d94ff;
+    background:linear-gradient(#c7ccfa 0%, #fff 100%) ;
+    border-radius:5px 5px 0 0;
+    display: none;
+}
+.search_item_null{
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+    color: #fff;
+}
+.menu_cont_search .search_menu{
+    width: 100%;
+    position:absolute ;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+
+}
+.menu_left{
+    width: 65%;
+    height: 98%;
+    float: left;
+    background: #fff;
+    margin: 1% 3% 1% 1%;
+    border-radius: 5px;
+}
+.menu_right{
+    width: 30%;
+    height: 98%;
+    float: left;
+    margin: 1% 0 1% 1%;
+    position: relative;
+}
+.menu_right_content{
+    width: 98%;
+    margin-top: 50px;
+    overflow: hidden;
+}
+.menu_right_content .item, .search_item{
+    width: 90%;
+    margin-left: 1px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    padding-left: 5%;
+    letter-spacing: 1px;
+}
+.search_item{
+    color: #509591;
+    margin: 5px 10px 5px 0;
+}
+.menu_right_content .item:hover, .search_item:hover{
+    background:linear-gradient(rgba(255, 255, 255, 0.22) 0%, rgba(0, 0, 255, 0.1) 25%, rgba(0, 0, 0, 0.31) 50%, rgba(255, 255, 255, 0.26) 100%) ;
+    border: 1px solid rgba(0, 0, 255, 0.29);
+    cursor: default;
+}
+.menu_right_header{
+    position: absolute;
+    top: -50px;
+    left: 5%;
+    width: 80%;
+    height: 80px;
+}
+.menu_right_header img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: none;
+}
+.visible_menu{
+    width: 96%;
+    height: 80%;
+    margin: 2% 2% 0 2%;
+    overflow-y: scroll;
+    position: relative;
+}
+.visible_menu .item{
+    width: 98%;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid transparent;
+    border-radius:3px ;
+    margin: 2px 1%;
+    cursor: default;
+}
+.visible_menu img{
+    width: 100%;
+    height: 100%;
+}
+.all_item_menu .item{
+    height: 18px;
+    font-size: 12px;
+    line-height: 18px;
+    width: 88%;
+    padding-left: 10%;
+    position: relative;
+}
+.all_item_menu i{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 1px;
+    left: 1px;
+}
+.visible_menu .item:hover{
+    background: rgba(0, 0, 255, 0.1);
+    border: 1px solid rgba(0, 0, 255, 0.29);
+}
+.visible_menu .item_icon{
+    float: left;
+    width: 22px;
+    height: 22px;
+    margin: 1px 5px 1px 1px;
+}
+.visible_menu .item_name{
+    font-size: 12px;
+}
+.visible_menu .program_menu .item_icon{
+    margin-left: 3px;
+}
+.shortcut_menu{
+    width: 98%;
+    overflow: hidden;
+    margin: 1% 1% 0;
+    position: relative;
+}
+.shortcut_menu:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 96%;
+    height: 1px;
+    left: 2%;
+    background: #d6e5f5;
+}
+.all_menu{
+    width: 96%;
+    height: 25px;
+    margin: 5px 2% 5px 2%;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 25px;
+    position: relative;
+    cursor: default;
+    border: 1px solid transparent;
+}
+.all_menu:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 90%;
+    height: 1px;
+    left: 2%;
+    background: #d6e5f5;
+}
+.all_menu a{
+    margin-left: 10%;
+}
+.all_menu span{
+    margin-left: 5%;
+}
+.all_menu:hover{
+    background: rgba(0, 0, 255, 0.1);
+    border: 1px solid rgba(0, 0, 255, 0.29);
+    cursor: default;
+}
+.search_menu{
+    width: 96%;
+    height: 35px;
+    margin: 0 2% 0 2%;
+    background: #f0f4fa;
+}
+.search_menu input{
+    width: 90%;
+    outline: none;
+    height: 19px;
+    margin: 8px 10px 0;
+}
+.footer .icon{
+    float:left;
+    width:70px;
+    height:50px;
+    background:url("../images/icons.png") 14px -190px no-repeat;
+    border:1px solid rgba(255,255,255,0);
+    border-width:0 1px 0 1px;
+}
+.footer .icon:hover{
+    border-color: rgba(255,255,255,0.3);
+    background-color: rgba(255,255,255,0.1);
+}
+.dsk_icon{
+    width:96px;
+    height: 83px;
+    border-radius:3px;
+    border:2px solid rgba(255,255,255,0);
+    background:rgba(255,255,255,0);
+    padding:8px 0;
+    transition:background 0.5s ease;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:2;
+    display:none;
+}
+.dsk_icon:hover{
+    border:2px solid rgba(255,255,255,0.3);
+    background:rgba(255,255,255,0.1);
+    padding:8px 0;
+    transition:background 0.5s ease;
+}
+.dsk_icon.editing{
+    border:2px solid rgba(255,255,255,0);
+    background:rgba(255,255,255,0);
+}
+.dsk_icon .icon{
+    background:url("../images/icons.png") 0px -95px no-repeat;
+    width:60px;
+    height:64px;
+    margin:0 auto;
+}
+.dsk_icon .hasDust{
+    background:url("../images/icons.png") -320px -95px no-repeat;
+
+}
+.dsk_icon input{
+    width:60px;
+    display: block;
+    margin:3px auto 0;
+    text-align:center;
+    display:none;
+}
+.dsk_icon p{
+    text-align:center;
+    font-size:14px;
+    height: 16px;
+    color:#fff;
+    padding-top:3px;
+}
+.dsk_icon.active{
+    background:rgba(255,255,255,0.4);
+    border:2px solid rgba(255,255,255,0.5);
+}
+.footer .time{
+    float:right;
+    width:100px;
+    height:50px;
+
+}
+.footer .time span{
+    display:block;
+    color:#fff;
+    text-align:center;
+    padding:6px 0 0 0;
+    font-family:arial;
+    font-size:14px;
+}
+.footer .little_icons{
+    float:right;
+    width:235px;
+    height:50px;
+    background:url("../images/little_icons.png") 0px 14px no-repeat;
+}
+.mask{
+    position:fixed;
+    height:0px;
+    width:0px;
+    z-index:99;
+    border:1px solid rgba(73,199,240,0.7);
+    background:rgba(2,58,148,0.1);
+    display:none;
+}
+.win{
+    width:682px;
+    height: 373px;
+    position: fixed;
+    left: 30px;
+    top: 30px;
+    z-index: 99;
+    background:  rgba(255,255,255,0.7) url("../images/win_bg.jpg") no-repeat;
+    border: 5px solid rgba(9,48,106,0.8);
+    border-radius: 5px;
+    box-shadow: 0 0 5px 3px rgba(0,0,0,0.6);
+    border-width:30px 5px 5px;
+}
+.winbtns{
+    width:103px;
+    height: 21px;
+    position: absolute;
+    top: -31px;
+    right: -3px;
+    background: url("../images/win_icon.png");
+}
+.winbtns a{
+    float: left;
+    height: 21px;
+}
+.winbtns a:nth-child(1){
+    width: 29px;
+}
+.winbtns a:nth-child(2){
+    width: 27px;
+}
+.winbtns a:nth-child(3){
+    width: 47px;
+}
+.winbtns a:hover{
+    box-shadow: 0 0 2px 2px #0bfefb inset;
+}
+
+.context_menu{
+    width: 250px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    border: 1px solid #bababa;
+    background: #fff;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+    font-size: 13px;
+    display: none;
+}
+.context_menu .group{
+    border-top: 1px solid #e9e9e9;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.context_menu li{
+    padding: 4px 25px;
+    cursor: default;
+}
+.context_menu li:hover{
+    background:#e6edf6;
+}
+.context_menu span{
+    float: right;
+    color:#a1a192;
+}
+
+.win_TL, .win_TR, .win_BL, .win_BR{
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background: rgba(0,0,0,0);
+}
+.win_TL{
+    top: -30px;
+    left: -5px;
+    cursor: nw-resize;
+}
+.win_TR{
+    top: -30px;
+    right: -5px;
+    cursor: sw-resize;
+}
+.win_BL{
+    bottom: -5px;
+    left: -5px;
+    cursor: ne-resize;
+}
+.win_BR{
+    bottom: -5px;
+    right: -5px;
+    cursor: se-resize;
+}
+.win_T, .win_R, .win_B, .win_L{
+    background: rgba(0,0,0,0);
+    width: 5px;
+    height: 5px;
+    position: absolute;
+}
+.win_T{
+    top:-30px;
+    left: 10px;
+    width: 660px;
+    cursor: s-resize;
+}
+.win_R{
+    top:0px;
+    right: -5px;
+    height: 360px;
+    cursor:w-resize;
+}
+.win_B{
+    bottom:-5px;
+    left: 10px;
+    width: 660px;
+    cursor: s-resize;
+}
+.win_L{
+    top:0px;
+    left: -5px;
+    height: 360px;
+    cursor:w-resize;
+}
